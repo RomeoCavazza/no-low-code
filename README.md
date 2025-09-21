@@ -1,4 +1,4 @@
-### no-low-code — Workflows d’automatisation (Make & n8n)
+### Workflows d’automatisation (Make & n8n)
 
 Ce dossier rassemble des travaux sur des outils d’automatisation no code / low code, avec deux workflows prêts à l’import: un scénario Make pour l’agrégation multi‑sources vers Google Sheets et un workflow n8n focalisé TikTok vers Airtable.
 
