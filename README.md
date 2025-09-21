@@ -16,25 +16,6 @@ Ce dossier rassemble des travaux sur des outils d’automatisation no code / low
 - **n8n (TikTok → Airtable)**: interroge l’acteur Apify TikTok, récupère les sous‑titres pour produire un transcript, et charge les données dans Airtable (onglet « Scraped Content »). Formulaire simplifié pour créer des requêtes.
   - Base Airtable de démonstration: [Lien Airtable](https://airtable.com/appUKygDScJYHelFj/pagKUI8oSIrjRYGFA)
 
-### Structure
-```
-no-low-code/
-  Make/
-    make-workflow.json
-    make-screenshots/
-      data-sheet.png
-      make-workflow.png
-    README.md
-  n8n/
-    n8n-workflow.json
-    n8n-screenshots/
-      data-table.png
-      n8n-workflow.png
-      request-form.png
-    README.md
-  README.md (ce fichier)
-```
-
 ### Quickstart
 1) Ouvrez le guide dédié à l’outil que vous souhaitez utiliser:
    - Make: voir `Make/README.md`
@@ -49,7 +30,3 @@ x
 - Utilisez les gestionnaires d’identifiants des plateformes (Make Connections, n8n Credentials) et/ou des variables d’environnement.
 - Respectez les limites d’API (rate limits) et ajoutez des temporisations si nécessaire.
 - Conservez une copie exportée des blueprints après modifications et documentez les changements.
-
-### Documentation détaillée
-- Guide Make: `Make/README.md`
-- Guide n8n: `n8n/README.md`
