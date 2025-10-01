@@ -3,6 +3,12 @@
 ## 🎯 Fonction
 Workflow n8n pour récupérer les emails Gmail, les analyser avec OpenAI GPT-3.5-turbo, et générer un JSON exploitable.
 
+## 📊 Déclencheurs
+
+- **Schedule** : Automatique quotidien à 18h00
+- **Webhook** : `/webhook/refresh-mails` (depuis l'interface)
+- **Manual** : Bouton "Test workflow" dans n8n
+
 ## 🏗️ Architecture
 
 ```
@@ -17,47 +23,6 @@ OpenAI Analysis → JSON Summary
 Merge Results → Convert to Binary
     ↓
 Write File → /files/mails-today.json
-```
-
-## 📊 Déclencheurs
-
-- **Schedule** : Automatique quotidien à 18h00
-- **Webhook** : `/webhook/refresh-mails` (depuis l'interface)
-- **Manual** : Bouton "Test workflow" dans n8n
-
-## 🔧 Configuration
-
-### Credentials requises
-
-**1. Gmail OAuth2**
-- Scope : `gmail.readonly`
-- URI redirection : `http://localhost:5678/rest/oauth2-credential/callback`
-
-**2. OpenAI**
-- Model : `gpt-3.5-turbo`
-- Temperature : 0.7
-
-### Paramètres du workflow
-
-**Gmail query** : `newer_than:1d -category:promotions`  
-**Output path** : `/files/mails-today.json`  
-**Webhook path** : `/webhook/refresh-mails`
-
-## 📤 Format de sortie
-
-```json
-{
-  "day": "2025-10-01",
-  "total": 15,
-  "urgency_level": "moyenne",
-  "tl_dr": "Résumé personnalisé...",
-  "priority_emails": [
-    {"id": "abc", "reason": "Réponse recruteur"}
-  ],
-  "key_topics": ["emploi", "sécurité"],
-  "suggested_actions": ["Répondre au recruteur"],
-  "emails": [...]
-}
 ```
 
 ## 🚀 Installation
@@ -125,21 +90,6 @@ docker run --rm -v "$(pwd)/front-page/data:/data" alpine sh -c "chmod -R 777 /da
 Toggle **"Active"** → ON (bleu)  
 → Exécution automatique tous les jours à 18h00
 
-## 🐛 Dépannage
-
-**LLM retourne null**  
-→ Vérifier connexion "Basic LLM Chain" → "Merge Results"
-
-**JSON parsing failed**  
-→ Vérifier le prompt et température (0.7)
-
-**File not found**  
-→ Vérifier volume Docker : `./front-page/data:/files`
-→ Vérifier permissions : `chmod -R 777 ./front-page/data` via conteneur Docker
-
-**Gmail quota exceeded**  
-→ Espacer les exécutions, vérifier quotas Google Cloud
-
 ## 📊 Monitoring
 
 ```bash
@@ -151,4 +101,3 @@ curl -X POST http://localhost:5678/webhook/refresh-mails
 ```
 
 ---
-*Workflow n8n robuste - Prêt pour production*
