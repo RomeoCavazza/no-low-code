@@ -24,6 +24,9 @@ services:
       - N8N_RUNNERS_ENABLED=false
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - N8N_GIT_NODE_DISABLE_BARE_REPOS=true
+      
+      # Autoriser l'accès aux fichiers système
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
     volumes:
       # Données n8n persistantes
       - n8n_data:/home/node/.n8n

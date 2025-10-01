@@ -21,3 +21,6 @@ build/
 # IDE / éditeurs
 .vscode/
 .idea/
+
+# Données générées automatiquement par les workflows
+gmail/front-page/data/mails-today.json
