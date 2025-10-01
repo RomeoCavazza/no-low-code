@@ -8,135 +8,135 @@ Système complet d'automatisation Gmail avec analyse IA pour gérer et visualise
 Gmail API → n8n Workflow → OpenAI GPT-3.5 → JSON → Interface Web
 ```
 
-**Composants :**
-- **n8n** : Workflow d'automatisation (récupération emails + analyse IA)
-- **OpenAI** : Analyse intelligente (résumé, urgence, thèmes, priorités)
-- **Interface Web** : Dashboard moderne avec filtres et gestion d'emails
-- **Docker** : Environnement reproductible et portable
+---
 
-## 🚀 Installation rapide
+## 🚀 Quickstart Recruteur (10 étapes)
 
-### 1. Prérequis
-- Docker et Docker Compose installés
-- Compte Gmail avec API activée
-- Clé API OpenAI (GPT-3.5-turbo)
-
-### 2. Lancement
+### 1. Cloner le projet
 ```bash
-cd gmail/
+git clone https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code/gmail
+```
+
+### 2. Lancer Docker
+```bash
 docker-compose up -d
+# Attendre 30 secondes
 ```
 
-### 3. Configuration n8n
-```bash
-# Accéder à n8n
+### 3. Accéder à n8n
+```
 http://localhost:5678
-
-# Importer le workflow
-json/workflow.json
-
-# Configurer les credentials
-- Gmail OAuth2 (lecture emails)
-- OpenAI API Key
 ```
 
-### 4. Activation
-- Activer le workflow dans n8n
-- Accéder à l'interface : http://localhost:8080
+### 4. Importer le workflow
+- Import from File → `json/workflow.json`
+
+### 5. Configurer Gmail OAuth2
+1. [Google Cloud Console](https://console.cloud.google.com/) → Créer projet
+2. Activer **Gmail API**
+3. Créer credentials **OAuth 2.0 Web Application**
+4. URI de redirection : `http://localhost:5678/rest/oauth2-credential/callback`
+5. Dans n8n : Credentials → Gmail OAuth2 → Connecter
+
+### 6. Configurer OpenAI
+1. [OpenAI Platform](https://platform.openai.com/api-keys) → Créer clé API
+2. Dans n8n : Credentials → OpenAI → Coller la clé
+
+### 7. Activer le workflow
+Toggle "Active" → ON (bleu)
+
+### 8. Tester
+```bash
+# Dans n8n : cliquer "Test workflow"
+# OU via curl :
+curl -X POST http://localhost:5678/webhook/refresh-mails
+```
+
+### 9. Accéder à l'interface
+```
+http://localhost:8080
+```
+
+### 10. Utiliser
 - Cliquer "Actualiser" pour traiter les emails
+- Explorer le résumé IA
+- Filtrer, rechercher, gérer vos emails
 
-## 📁 Structure
-```
-gmail/
-├── docker-compose.yml          # Orchestration Docker
-├── json/
-│   └── workflow.json           # Workflow n8n complet
-├── front-page/                 # Interface web
-│   ├── index.html              # Page principale
-│   ├── assets/
-│   │   ├── script/
-│   │   │   └── script.js       # Logique applicative
-│   │   └── style/
-│   │       └── style.css       # Styles CSS3
-│   ├── data/
-│   │   └── mails-today.json    # Données générées par n8n
-│   └── README.md               # Doc interface
-├── screenshots/                # Captures d'écran
-├── rapport.md                  # Rapport technique détaillé
-└── README.md                   # Ce fichier
-```
-
-## 🔗 URLs d'accès
-
-| Service | URL | Description |
-|---------|-----|-------------|
-| **Interface Web** | http://localhost:8080 | Dashboard principal |
-| **n8n Workflow** | http://localhost:5678 | Configuration & monitoring |
-| **Données JSON** | http://localhost:8080/data/mails-today.json | Données brutes |
+---
 
 ## 📊 Fonctionnalités
 
-### 🤖 Analyse IA (OpenAI GPT-3.5-turbo)
-- **Résumé quotidien** : Synthèse personnalisée de vos emails
-- **Niveau d'urgence** : Faible, Moyenne, Forte
-- **Emails prioritaires** : Détection automatique des emails importants
-- **Thèmes clés** : Extraction de 1-2 mots par thème (max 15 caractères)
-- **Actions suggérées** : Recommandations IA
+### Analyse IA
+- Résumé quotidien personnalisé
+- Détection d'urgence (Faible/Moyenne/Forte)
+- Emails prioritaires automatiques
+- Thèmes clés (1-2 mots)
 
-### 🌐 Interface Web
-- **Dashboard** : Résumé IA + statistiques
-- **Recherche** : Temps réel dans les sujets
-- **Filtres** : Par expéditeur, épinglés, corbeille
-- **Actions** : Épingler, archiver, supprimer, restaurer
-- **Persistance** : localStorage pour les actions utilisateur
-- **Responsive** : Design adaptatif mobile/desktop
-- **États vides** : Messages contextuels selon les filtres
+### Interface Web
+- Dashboard avec résumé IA
+- Recherche temps réel
+- Filtres avancés (expéditeur, épinglés, corbeille)
+- Actions (épingler, archiver, supprimer)
+- Design responsive
 
-### 🔄 Automatisation
-- **Planification** : Exécution automatique quotidienne (18h00)
-- **Webhook** : Déclenchement depuis l'interface
-- **Manuel** : Exécution à la demande dans n8n
-- **Synchronisation** : Mise à jour temps réel
+### Automatisation
+- Exécution quotidienne (18h00)
+- Déclenchement webhook/manuel
+- Persistance des actions
+
+## 📁 Structure
+
+```
+gmail/
+├── docker-compose.yml          # Orchestration
+├── json/workflow.json          # Workflow n8n
+├── front-page/                 # Interface web
+│   ├── index.html
+│   ├── assets/script/script.js
+│   ├── assets/style/style.css
+│   └── data/mails-today.json
+├── rapport.md                  # Rapport technique
+└── README.md                   # Ce fichier
+```
+
+## 🔗 URLs
+
+| Service | URL |
+|---------|-----|
+| **Interface Web** | http://localhost:8080 |
+| **n8n** | http://localhost:5678 |
+| **JSON** | http://localhost:8080/data/mails-today.json |
 
 ## 🛠️ Commandes utiles
 
 ```bash
-# Démarrer l'environnement
-docker-compose up -d
-
-# Voir les logs
+# Logs
 docker-compose logs -f n8n
-docker-compose logs -f web
 
-# Redémarrer un service
+# Redémarrer
 docker-compose restart n8n
 
-# Arrêter tout
+# Arrêter
 docker-compose down
-
-# Tester le webhook
-curl -X POST http://localhost:5678/webhook/refresh-mails
 ```
+
+## 🐛 Dépannage
+
+**Workflow ne s'exécute pas :**  
+→ Vérifier credentials Gmail + OpenAI
+
+**Interface vide :**  
+→ Exécuter le workflow au moins une fois
+
+**Erreur quota Gmail :**  
+→ Limites API (100/jour gratuit)
 
 ## 📖 Documentation
 
-- **[Interface Web](front-page/README.md)** : Guide d'utilisation du dashboard
-- **[Workflow n8n](json/README.md)** : Configuration du workflow
-- **[Rapport Technique](rapport.md)** : Défis et solutions techniques
-
-## 🎯 Technologies
-
-- **n8n** : Workflow automation open-source
-- **OpenAI GPT-3.5-turbo** : LLM pour analyse IA
-- **Vanilla JavaScript** : Interface web sans framework
-- **Docker** : Conteneurisation et déploiement
-- **Gmail API** : Récupération des emails
-
-## 🚧 Défis techniques résolus
-
-1. **Parsing LLM** : Gestion robuste du JSON généré par OpenAI
-2. **Connexion n8n-frontend** : Synchronisation webhook/manual/schedule
-3. **Volumes Docker** : Partage de données entre conteneurs
+- [Interface Web](front-page/README.md)
+- [Workflow n8n](json/README.md)  
+- [Rapport Technique](rapport.md)
 
 ---
-*Automatisation Gmail complète avec IA - Prête à déployer en 3 commandes.*
+*Installation en 10 étapes - Prêt à l'emploi*
