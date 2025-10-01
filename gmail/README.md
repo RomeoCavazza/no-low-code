@@ -53,7 +53,7 @@ docker-compose up -d
 ### 5. Configurer Gmail OAuth2
 
 #### a) Google Cloud Console
-1. [Console](https://console.cloud.google.com/) → Créer projet
+1. [console.cloud.google.com](https://console.cloud.google.com/apis/credentials?project=gen-lang-client-0001397937) → Créer projet
 2. Activer **Gmail API**
 3. Créer **OAuth 2.0 Client ID** (Web application)
 4. **⚠️ Authorized JavaScript origins :**
@@ -77,7 +77,7 @@ docker-compose up -d
 5. ✅ Vérifier "Connected"
 
 ### 6. Configurer OpenAI
-1. [Créer clé API](https://platform.openai.com/api-keys) → **Copier immédiatement**
+1. [platform.openai.com](https://platform.openai.com/api-keys) → **Copier immédiatement**
 2. Dans n8n, cliquer sur le nœud **"Basic LLM Chain"**
 3. Credential → **Create New**
 4. Coller l'**API Key**
