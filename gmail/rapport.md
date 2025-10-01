@@ -21,6 +21,6 @@
 - Workflow **n8n relié directement à une interface web**.  
 - UX minimaliste mais efficace (reload, tri, affichage responsive).
 
-## Points d'amélioration
+## Points à renforcer
 - **Dépendance à Docker** : nécessite que l’environnement Docker tourne en continu.
 - **Pas encore de base de données** : persistance limitée à un fichier JSON local.  
