@@ -10,7 +10,7 @@ Gmail API → n8n Workflow → OpenAI GPT-3.5 → JSON → Interface Web
 
 ---
 
-## 🚀 Quickstart Recruteur (10 étapes)
+## 🚀 Quickstart
 
 ### 1. Cloner le projet
 ```bash
