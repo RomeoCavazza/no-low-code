@@ -4,6 +4,31 @@
 
 **Architecture :** Gmail API → n8n → OpenAI GPT-3.5 → JSON → Interface Web
 
+
+## 📖 Documentation
+
+- **[README.md](README.md)** - Quickstart (ce fichier)
+- **[rapport.md](rapport.md)** - Difficultés rencontrées & solutions techniques
+- **[json/README.md](json/README.md)** - Configuration workflow n8n
+- **[front-page/README.md](front-page/README.md)** - Documentation interface
+
+## 📦 Arborescence
+
+```
+gmail/
+├── README.md              # Quickstart
+├── rapport.md             # Difficultés & solutions
+├── docker-compose.yml     # Config Docker
+├── json/
+│   ├── workflow.json      # Workflow n8n
+│   └── README.md
+├── front-page/
+│   ├── index.html
+│   ├── assets/
+│   ├── data/              # Généré automatiquement
+│   └── README.md
+└── screenshots/
+```
 ---
 
 ## ⚡ Quickstart
@@ -85,101 +110,12 @@ cat front-page/data/mails-today.json
 
 ### 8. Activer & Utiliser
 - Toggle **"Active"** → ON (exécution quotidienne 18h00)
-- Interface web : http://localhost:8080
-- Webhook manuel : `curl -X POST http://localhost:5678/webhook/refresh-mails`
+- Trigger Webhook via terminal : `curl -X POST http://localhost:5678/webhook/refresh-mails`
 
----
-
-## 🎯 Fonctionnalités
-
-**Analyse IA**
-- Résumé quotidien personnalisé
-- Détection urgence (Faible/Moyenne/Forte)
-- Emails prioritaires automatiques
-- Thèmes clés extraits
-
-**Interface Web**
-- Dashboard avec résumé IA
-- Recherche temps réel
-- Filtres (expéditeur, épinglés, corbeille)
-- Actions (épingler, archiver, supprimer)
-
-**Automatisation**
-- Exécution quotidienne (18h00)
-- Déclenchement webhook/manuel
-- Persistance locale (JSON)
-
----
-
-## 🔗 URLs
-
+### 8. Interface web
+  
 | Service | URL |
 |---------|-----|
 | **Interface** | http://localhost:8080 |
 | **n8n** | http://localhost:5678 |
 | **JSON** | http://localhost:8080/data/mails-today.json |
-
----
-
-## 🐛 Dépannage rapide
-
-| Problème | Solution |
-|----------|----------|
-| "Forbidden by access permissions" | `docker run --rm -v "$(pwd)/front-page/data:/data" alpine sh -c "chmod -R 777 /data"` |
-| OAuth2 Gmail ne connecte pas | Vérifier URLs exactes (voir étape 4) |
-| "Invalid API Key" OpenAI | Générer nouvelle clé API |
-| Interface vide | Exécuter workflow au moins 1 fois |
-| LLM retourne null | Vérifier connexion "Basic LLM Chain" → "Merge Results" (port Input 2) |
-
-**Problèmes détaillés ?** → Voir [rapport.md](rapport.md) section "Difficultés Rencontrées"
-
----
-
-## 📖 Documentation
-
-- **[README.md](README.md)** - Quickstart (ce fichier)
-- **[rapport.md](rapport.md)** - Difficultés rencontrées & solutions techniques
-- **[json/README.md](json/README.md)** - Configuration workflow n8n
-- **[front-page/README.md](front-page/README.md)** - Documentation interface
-
----
-
-## 🛠️ Commandes utiles
-
-```bash
-# Logs
-docker-compose logs -f n8n
-
-# Redémarrer
-docker-compose restart
-
-# Arrêter
-docker-compose down
-
-# Test permissions
-docker exec n8n touch /files/test.txt && docker exec n8n rm /files/test.txt
-```
-
----
-
-## 📦 Structure
-
-```
-gmail/
-├── README.md              # Quickstart
-├── rapport.md             # Difficultés & solutions
-├── docker-compose.yml     # Config Docker
-├── json/
-│   ├── workflow.json      # Workflow n8n
-│   └── README.md
-├── front-page/
-│   ├── index.html
-│   ├── assets/
-│   ├── data/              # Généré automatiquement
-│   └── README.md
-└── screenshots/
-```
-
----
-
-**🎉 Prêt en 15 minutes** - [Voir les difficultés techniques](rapport.md)
