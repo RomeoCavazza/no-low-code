@@ -28,8 +28,8 @@ services:
       # Données n8n persistantes
       - n8n_data:/home/node/.n8n
       
-      # VOLUME PARTAGÉ : n8n écrit dans /files, site web lit depuis ./site/data
-      - ./site/data:/files
+      # VOLUME PARTAGÉ : n8n écrit dans /files, site web lit depuis ./front-page/data
+      - ./front-page/data:/files
     networks:
       - maily-network
 
@@ -43,7 +43,7 @@ services:
     working_dir: /app
     command: python -m http.server 8080 --bind 0.0.0.0
     volumes:
-      - ./site:/app
+      - ./front-page:/app
     networks:
       - maily-network
     depends_on:

@@ -357,7 +357,7 @@
     },
     {
       "parameters": {
-        "content": "## Sauvegarde locale\n\n- Le résultat final est transformé en **JSON** et sauvegardé localement dans :\n  ```bash\n  site/data/mails-today.json\nUn Switch oriente la sortie, puis Respond to Webhook renvoie la réponse à l’appelant.",
+        "content": "## Sauvegarde locale\n\n- Le résultat final est transformé en **JSON** et sauvegardé localement dans :\n  ```bash\n  front-page/data/mails-today.json\nUn Switch oriente la sortie, puis Respond to Webhook renvoie la réponse à l'appelant.",
         "height": 256,
         "width": 720,
         "color": 7
@@ -471,7 +471,7 @@
     },
     {
       "parameters": {
-        "content": "## 🚀 Quick Start\n\n\n- Configurer les credentials **Gmail** et **OpenAI API Key**.\n\n- Lancer n8n : `docker-compose up -d` puis ouvrir [http://localhost:5678](http://localhost:5678).    \n\n- Activer le workflow et tester : `curl -X POST http://localhost:5678/webhook/refresh-mails`.  \n\n- Les mails traités sont sauvegardés dans `site/data/mails-today.json`.  \n",
+        "content": "## 🚀 Quick Start\n\n\n- Configurer les credentials **Gmail** et **OpenAI API Key**.\n\n- Lancer n8n : `docker-compose up -d` puis ouvrir [http://localhost:5678](http://localhost:5678).    \n\n- Activer le workflow et tester : `curl -X POST http://localhost:5678/webhook/refresh-mails`.  \n\n- Les mails traités sont sauvegardés dans `front-page/data/mails-today.json`.  \n",
         "height": 384,
         "width": 256
       },
