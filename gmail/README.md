@@ -41,19 +41,26 @@ docker run --rm -v "$(pwd)/front-page/data:/data" alpine sh -c "chmod -R 777 /da
 ### 3. Lancer Docker
 ```bash
 docker-compose up -d
+# Attendre 30 secondes que n8n démarre
 ```
 
-### 4. Configurer Gmail OAuth2
+### 4. Accéder à n8n et importer le workflow
+1. Ouvrir : **http://localhost:5678**
+2. Menu (☰) → **Import from File**
+3. Sélectionner : `json/workflow.json`
+4. Cliquer **Import**
 
-#### Google Cloud Console
+### 5. Configurer Gmail OAuth2
+
+#### a) Google Cloud Console
 1. [Console](https://console.cloud.google.com/) → Créer projet
 2. Activer **Gmail API**
 3. Créer **OAuth 2.0 Client ID** (Web application)
-4. **Authorized JavaScript origins :**
+4. **⚠️ Authorized JavaScript origins :**
    ```
    http://localhost:5678
    ```
-5. **Authorized redirect URIs :**
+5. **⚠️ Authorized redirect URIs :**
    ```
    http://localhost:5678/rest/oauth2-credential/callback
    ```
@@ -62,25 +69,28 @@ docker-compose up -d
    https://www.googleapis.com/auth/gmail.readonly
    ```
 
-#### Dans n8n (http://localhost:5678)
-1. Import workflow : `json/workflow.json`
-2. Nœud "Get many messages" → Credential → Créer
-3. Coller Client ID + Client Secret
-4. Connect my account → Autoriser
+#### b) Dans n8n
+1. Cliquer sur le nœud **"Get many messages"** (Gmail)
+2. Credential → **Create New**
+3. Coller **Client ID** + **Client Secret**
+4. **Connect my account** → Autoriser Gmail
+5. ✅ Vérifier "Connected"
 
-### 5. Configurer OpenAI
+### 6. Configurer OpenAI
 1. [Créer clé API](https://platform.openai.com/api-keys) → **Copier immédiatement**
-2. Nœud "Basic LLM Chain" → Credential → Créer
-3. Coller l'API Key
+2. Dans n8n, cliquer sur le nœud **"Basic LLM Chain"**
+3. Credential → **Create New**
+4. Coller l'**API Key**
+5. ✅ Sauvegarder
 
-### 6. Tester
+### 7. Tester
 ```bash
 # Dans n8n : Cliquer "Test workflow"
 # Vérifier la création du fichier :
 cat front-page/data/mails-today.json
 ```
 
-### 7. Activer & Utiliser
+### 8. Activer & Utiliser
 - Toggle **"Active"** → ON (exécution quotidienne 18h00)
 - Interface web : http://localhost:8080
 - Webhook manuel : `curl -X POST http://localhost:5678/webhook/refresh-mails`
