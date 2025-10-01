@@ -6,19 +6,12 @@
 
 ---
 
-## ⚡ Quickstart (5 minutes)
+## ⚡ Quickstart
 
 ### Prérequis
 - Docker installé
 - Compte Google (Gmail)
 - Compte OpenAI avec crédits
-
-### ⚠️ 4 points critiques avant de commencer
-
-1. **Clone sparse** (gain 70% de bande passante)
-2. **OAuth2 Gmail** : URLs exactes requises
-3. **OpenAI API** : Générer une NOUVELLE clé
-4. **Permissions Docker** : `chmod 777` AVANT docker-compose
 
 ---
 
