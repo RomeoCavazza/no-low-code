@@ -28,8 +28,8 @@
 ```bash
 git clone --depth 1 --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
 cd no-low-code
-git sparse-checkout set no-low-code/gmail
-cd no-low-code/gmail
+git sparse-checkout set gmail
+cd gmail
 ```
 
 ### 2. Préparer les permissions
