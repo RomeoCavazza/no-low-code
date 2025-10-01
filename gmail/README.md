@@ -6,7 +6,7 @@
 
 ---
 
-## ⚡ Quickstart (15 minutes)
+## ⚡ Quickstart (5 minutes)
 
 ### Prérequis
 - Docker installé
