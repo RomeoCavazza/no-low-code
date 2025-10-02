@@ -60,14 +60,6 @@ Portfolio de 3 projets d'automatisation professionnels démontrant l'orchestrati
 
 ---
 
-## 🚀 Quickstart
-
-| Projet | Installation |
-|--------|-------------|
-| **Gmail IA** | `cd gmail && docker-compose up -d` → http://localhost:8080 |
-| **Multi-Scraper** | Importer `multi-scraper/json/workflow.json` dans Make |
-| **TikTok** | Importer `tiktok/json/workflow.json` dans n8n |
-
 ## 📊 Structure du dépôt
 
 ```
@@ -124,58 +116,6 @@ no-low-code/
 | **Gmail Automation** | Gestion intelligente des emails, priorisation automatique, résumés quotidiens IA |
 | **Multi-Scraper** | Veille concurrentielle IA, agrégation multi-sources, monitoring tech |
 | **TikTok Scraper** | Social media monitoring, extraction de tendances, analyse de contenu |
-
-## 🎓 Compétences démontrées
-
-### Backend & Automation
-- Orchestration de workflows (n8n, Make)
-- Intégration d'APIs tierces (Gmail, OpenAI, Apify, Airtable)
-- Gestion de credentials et secrets
-- Error handling et retry logic
-- Parsing et transformation de données
-
-### Frontend
-- Développement web vanilla (HTML5, CSS3, JavaScript)
-- Design responsive et accessible
-- Gestion d'état côté client (localStorage)
-- Optimisation des performances (cache busting, lazy rendering)
-
-### DevOps
-- Conteneurisation Docker
-- Docker Compose multi-services
-- Gestion de volumes partagés
-- Configuration environnement reproductible
-
-### IA & LLM
-- Prompt engineering (OpenAI, Anthropic, Gemini)
-- Parsing robuste de sortie LLM
-- Gestion des formats JSON structurés
-- Fine-tuning des paramètres (temperature, tokens)
-
-### Architecture
-- Architecture microservices
-- Séparation backend/frontend
-- Flux de données asynchrones
-- Design modulaire et maintenable
-
-## 🔐 Bonnes pratiques
-
-✅ **Sécurité** : Credentials dans gestionnaires dédiés (n8n Credentials, Make Connections)  
-✅ **Rate Limiting** : Respect des quotas API (Gmail, OpenAI, Apify)  
-✅ **Error Handling** : Try/catch, retry logic, fallbacks  
-✅ **Documentation** : README complets, commentaires, rapports techniques  
-✅ **Versionning** : Exports réguliers des workflows, Git pour le code  
-✅ **Monitoring** : Logs Docker, historique d'exécutions n8n/Make  
-
-## 📖 Documentation
-
-Chaque projet dispose de sa documentation complète :
-- **Architecture** : Schémas et flux de données
-- **Installation** : Guide pas-à-pas pour recruteurs
-- **Configuration** : Credentials et paramètres
-- **Utilisation** : Cas d'usage et exemples
-- **Dépannage** : Erreurs courantes et solutions
-- **Captures d'écran** : Interfaces et résultats
 
 ## 🚧 Défis techniques résolus
 
