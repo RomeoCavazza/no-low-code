@@ -62,7 +62,7 @@ J’ai passé une journée entière dessus : il fallait coordonner plusieurs sor
 ## 🤔 Ressenti personnel
 
 J’ai pris beaucoup de plaisir à réaliser cette mission.  
-- C’était un vrai **challenge technique**, surtout la partie merge dans n8n et lae branchement du front.
+- C’était un vrai **challenge technique**, surtout la partie merge dans n8n et le branchement du front.
 - J’ai appris à mieux documenter mes projets et à penser en termes de **setup reproductible**.  
 
 C’était aussi particulièrement agréable de créer ma propre interface et de mener ce mini-projet “presque full-stack”, 
