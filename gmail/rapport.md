@@ -66,6 +66,9 @@ J’ai pris beaucoup de plaisir à réaliser cette mission.
 - J’ai appris à mieux documenter mes projets et à penser en termes de **setup reproductible**.  
 
 C’était aussi particulièrement agréable de créer ma propre interface et de mener ce mini-projet “presque full-stack”, 
-entre front, back, API et dockerisation — une pratique que je compte clairement garder et faire progresser dans mes futurs projets.
+entre front, back, API et dockerisation. 
+
+Il ne manque finalement qu’un vrai déploiement (par exemple via Vercel) et l’ajout d’une page de paiement avec Stripe 
+pour aller encore plus loin — une pratique que je compte clairement garder et faire progresser dans mes futurs projets.
 
 Ce fut une mission marquante pour moi, et une très bonne pièce dans mon portfolio. 
