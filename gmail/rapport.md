@@ -1,26 +1,33 @@
-# Rapport – Gmail Automation
 
-## Étapes clés du projet
+---
 
-**MVP initial** : mise en place du workflow n8n → récupération Gmail (via schedule) → analyse OpenAI → écriture dans un fichier JSON.
+## 🚧 Difficultés rencontrées
 
-**Défi 1 – Sortie AI** : l’IA ne renvoyait pas toujours du JSON propre → ajout d’un merge + post-traitement pour fiabiliser la sortie.  
+1. **Branchement des données dans n8n**  
+   - Pas trivial de fusionner les sorties Gmail + résumé IA.  
+   - J’ai dû écrire plusieurs expressions JS pour que le JSON reste propre.  
 
-**Défi 2 – Multi-triggers** : ajout de 3 modes d’entrée (manual, webhook, schedule) → coordination complexe mais indispensable pour flexibilité d’usage.  
+2. **Coordination front ↔ back**  
+   - Le bouton « reload » devait appeler un webhook pour rafraîchir les données.  
+   - La synchronisation des fichiers JSON avec Docker a nécessité des ajustements (permissions + volumes).  
 
-**Défi 3 – Lien backend / frontend** : création d’un volume Docker partagé pour connecter la sortie n8n (JSON) au front HTML/CSS/JS.  
+3. **Dockerisation**  
+   - Quelques conflits de droits d’accès au dossier `data/` dans une image dockerisé (a nécessité plusieurs essais)
+   - 
+---
 
-**Défi 4 – Reload via Webhook** : bouton “Actualiser” → envoi cURL au webhook → exécution workflow → mise à jour du JSON → rafraîchissement instantané du front.  
+## 🤔 Ressenti personnel
 
-**Défi 5 – Interface responsive** : résumé en haut + liste en bas (mobile), ou vue côte-à-côte (desktop). Mise en forme via Cursor pour CSS/JS.  
+J’ai pris beaucoup de plaisir à réaliser cette mission.  
+- C’était un vrai **challenge technique**, surtout la partie merge dans n8n et la mise en place du front.  
+- J’ai appris à mieux documenter mes projets et à penser en termes de **setup reproductible**.  
+- J’ai confirmé que l’automatisation + IA + interface utilisateur, c’est vraiment le domaine où je veux me spécialiser.  
 
-**Défi 6 – Packaging final** : regroupement workflow, Docker et site web dans un seul dossier → Quick Start documenté (install en <15 min).  
+👉 Environ **3 jours de travail au total** :  
+- 1 jour pour le workflow n8n,  
+- 1 soirée pour le front,  
+- 1 jour pour la doc, tests et packaging.  
 
-## Points forts
-- Chaîne complète : **cURL → webhook → JSON → front** validée et fonctionnelle.  
-- Workflow **n8n relié directement à une interface web**.  
-- UX minimaliste mais efficace (reload, tri, affichage responsive).
+C’est une mission marquante pour moi, et une très bonne pièce dans mon portfolio.  
 
-## Points à renforcer
-- **Dépendance à Docker** : nécessite que l’environnement Docker tourne en continu.
-- **Pas encore de base de données** : persistance limitée à un fichier JSON local.  
+---
