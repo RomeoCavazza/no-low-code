@@ -1,16 +1,12 @@
-Parfait ⚡ voici ton **README.md** entièrement mis à jour — avec les **badges** stylisés, des **emojis légers et cohérents**, et une **mise en page claire et pro** sans dénaturer ton ton initial 👇
-
----
-
-# ⚙️ Workflows d’Automatisation No-Code / Low-Code
+# Workflows d’Automatisation No-Code / Low-Code
 
 Portfolio de **3 projets d’automatisation professionnels** : orchestration de workflows, intégration d’APIs et développement full-stack.
 
 ---
 
-## 🚀 Projets
+## Projets
 
-### 1. [📧 Gmail Automation avec IA](gmail/)
+### 1. [Gmail Automation avec IA](gmail/)
 
 Système complet qui récupère vos emails quotidiennement, les analyse avec **OpenAI** pour générer un résumé intelligent avec détection d’urgence, puis les affiche dans une interface web moderne avec fonctions de tri, épinglage et archivage.
 Déployé en **Docker** avec **n8n** pour l’orchestration.
@@ -20,7 +16,7 @@ Déployé en **Docker** avec **n8n** pour l’orchestration.
 
 ---
 
-### 2. [🧠 Multi-Scraper – Veille IA](multi-scraper/)
+### 2. [Multi-Scraper – Veille IA](multi-scraper/)
 
 Workflow **Make** qui agrège automatiquement du contenu tech depuis des flux RSS spécialisés et des comptes **Instagram** (NVIDIA, OpenAI, Google…), enrichit chaque post avec des résumés IA et analyse d’images via **Gemini**, puis centralise le tout dans **Google Sheets** avec déduplication.
 
@@ -29,7 +25,7 @@ Workflow **Make** qui agrège automatiquement du contenu tech depuis des flux RS
 
 ---
 
-### 3. [📱 TikTok Intelligence → Airtable](tiktok/)
+### 3. [TikTok Intelligence → Airtable](tiktok/)
 
 Workflow **n8n** avec formulaire web permettant de scraper **TikTok** par mots-clés ou comptes, d’extraire automatiquement les transcripts depuis les sous-titres VTT, d’analyser le contenu avec l’IA, et de stocker toutes les données enrichies dans **Airtable** pour analyse.
 
@@ -53,7 +49,7 @@ no-low-code/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ![n8n](https://img.shields.io/badge/n8n-EA4C89?logo=n8n\&logoColor=white)
 ![Make](https://img.shields.io/badge/Make-0085FF?logo=make\&logoColor=white)
@@ -72,20 +68,7 @@ no-low-code/
 
 ---
 
-## 🤖 Technologies principales
-
-**Automation** : n8n · Make · Docker
-**IA** : OpenAI GPT-3.5 · Google Gemini · Anthropic Claude
-**APIs** : Gmail · Apify · Airtable · Google Sheets
-**Frontend** : Vanilla JavaScript · HTML5 · CSS3
-
----
-
 ## 📬 Contact
 
 **Roméo Cavazza**
 [📧 romeo.cavazza@gmail.com](mailto:romeo.cavazza@gmail.com) · [💼 LinkedIn](https://www.linkedin.com/in/romeo-cavazza/) · [💻 GitHub](https://github.com/RomeoCavazza)
-
----
-
-Souhaites-tu que je te prépare aussi une **version “GitHub profile style”** (avec une bannière, section “About me”, top-langs, etc.) pour harmoniser ton portfolio global ?
