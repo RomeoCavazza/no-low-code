@@ -1,9 +1,5 @@
 # Workflows d’Automatisation No-Code / Low-Code
 
-Portfolio de **3 projets d’automatisation professionnels** : orchestration de workflows, intégration d’APIs et développement full-stack.
-
----
-
 ![n8n](https://img.shields.io/badge/n8n-EA4C89?logo=n8n\&logoColor=white)
 ![Make](https://img.shields.io/badge/Make-0085FF?logo=make\&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker\&logoColor=white)
@@ -19,7 +15,7 @@ Portfolio de **3 projets d’automatisation professionnels** : orchestration de 
 ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux\&logoColor=black)
 ![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos\&logoColor=white)
 
----
+Portfolio de **3 projets d’automatisation professionnels** : orchestration de workflows, intégration d’APIs et développement full-stack.
 
 ## Projets
 
