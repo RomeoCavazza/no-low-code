@@ -5,19 +5,19 @@ Portfolio de 3 projets d'automatisation professionnels : orchestration de workfl
 ## Projets
 
 ### 1. [Gmail Automation avec IA](gmail/)
-Automatisation Gmail avec analyse IA et dashboard web.
+Système complet qui récupère vos emails quotidiennement, les analyse avec OpenAI pour générer un résumé intelligent avec détection d'urgence, puis les affiche dans une interface web moderne avec fonctions de tri, épinglage et archivage. Déployé en Docker avec n8n pour l'orchestration.
 
 **Stack** : n8n · OpenAI GPT-3.5 · Docker · Vanilla JS  
 **Démo** : [localhost:8080](http://localhost:8080) | [n8n](http://localhost:5678)
 
 ### 2. [Multi-Scraper - Veille IA](multi-scraper/)
-Agrégation multi-sources de veille IA (RSS + Instagram) vers Google Sheets.
+Workflow Make qui agrège automatiquement du contenu tech depuis des flux RSS spécialisés et des comptes Instagram (NVIDIA, OpenAI, Google, etc.), enrichit chaque post avec des résumés IA et analyse d'images via Gemini, puis centralise le tout dans Google Sheets avec déduplication.
 
 **Stack** : Make · Google Sheets · OpenAI · Gemini · Apify  
 **Démo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit)
 
 ### 3. [TikTok Intelligence → Airtable](tiktok/)
-Monitoring TikTok avec extraction de transcripts vers Airtable.
+Workflow n8n avec formulaire web permettant de scraper TikTok par mots-clés ou comptes, d'extraire automatiquement les transcripts depuis les sous-titres VTT, d'analyser le contenu avec l'IA, et de stocker toutes les données enrichies dans Airtable pour analyse.
 
 **Stack** : n8n · Apify · Airtable · Anthropic · OpenAI
 
