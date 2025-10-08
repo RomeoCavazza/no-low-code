@@ -80,4 +80,4 @@ no-low-code/
 
 ## Contact
 
-[romeo.cavazza@gmail.com](mailto:romeo.cavazza@gmail.com) · [LinkedIn](https://www.linkedin.com/in/romeo-cavazza/) · [GitHub](https://github.com/RomeoCavazza)
+[romeo.cavazza@gmail.com](mailto:romeo.cavazza@gmail.com) · [LinkedIn](https://www.linkedin.com/in/romeo-cavazza/)
