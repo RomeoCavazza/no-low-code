@@ -1,92 +1,33 @@
 # Interface Web - Gmail Automation
 
-## 🎯 Fonction
-Dashboard web moderne pour visualiser et gérer vos emails avec l'assistance de l'IA.
+Dashboard web pour visualiser et gérer vos emails avec assistance IA.
 
-## 📊 Fonctionnalités
+## Fonctionnalités
 
-### Résumé IA
-- Synthèse quotidienne personnalisée
-- Badge d'urgence (Faible/Moyenne/Forte)
-- Emails prioritaires détectés
-- Thèmes clés (tags inline)
+- Résumé IA quotidien avec badge d'urgence
+- Gestion emails : épingler, archiver, supprimer, restaurer
+- Filtres : recherche temps réel (`/`), par expéditeur, épinglés
+- États vides contextuels
 
-### Gestion des emails
-- **Épingler** : Marquer comme important
-- **Archiver** : Masquer de la vue
-- **Supprimer** : Envoyer à la corbeille
-- **Restaurer** : Récupérer depuis corbeille
+## Technologies
 
-### Filtres
-- Recherche temps réel (touche `/`)
-- Par expéditeur (compteur si ≥2)
-- Épinglés uniquement
-- Vue corbeille
+**Stack** : HTML5, CSS3, Vanilla JavaScript, localStorage  
+**Icons** : Lucide
 
-### États vides
-Messages contextuels adaptés :
-- 📭 Boîte vide
-- 🗑️ Corbeille vide
-- 📌 Pas d'épinglés
-- 🔍 Aucun résultat
+## Utilisation
 
-## 🏗️ Architecture
+**Accès** : http://localhost:8080
 
-```
-index.html
-├── assets/
-│   ├── script/script.js    # 1166 lignes
-│   └── style/style.css     # 1828 lignes
-└── data/
-    └── mails-today.json    # Généré par n8n
-```
-
-## 🔧 Technologies
-
-- **HTML5** : Structure sémantique
-- **CSS3** : Variables, Grid, Flexbox
-- **Vanilla JavaScript** : Pur, sans framework
-- **localStorage** : Persistance des actions
-- **Lucide Icons** : Iconographie moderne
-
-## 🚀 Utilisation
-
-### Accès
-```
-http://localhost:8080
-```
-
-### Actualiser
-Bouton "Actualiser" ou :
+**Actualiser** :
 ```bash
 curl -X POST http://localhost:5678/webhook/refresh-mails
 ```
 
-### Flux de données
-```
-Clic "Actualiser" → Webhook n8n → Gmail API → OpenAI
-→ mails-today.json → Rechargement interface
-```
+**Flux** : Clic "Actualiser" → Webhook n8n → Gmail API → OpenAI → `mails-today.json` → Interface
 
-## 🎨 Design System
-
-```css
---primary: #3b82f6        /* Bleu principal */
---space-sm: 0.5rem        /* 8px */
---space-md: 1rem          /* 16px */
---space-lg: 1.5rem        /* 24px */
-```
-
-## 🐛 Debug
+## Debug
 
 ```javascript
-// Vérifier l'état
-console.log(window.state);
-
-// Réinitialiser
-localStorage.clear();
-location.reload();
+console.log(window.state);      // État actuel
+localStorage.clear();            // Réinitialiser
 ```
-
----
-*Interface web moderne - 100% vanilla JavaScript*
