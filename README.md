@@ -2,6 +2,21 @@
 
 Portfolio de **3 projets d’automatisation professionnels** : orchestration de workflows, intégration d’APIs et développement full-stack.
 
+![n8n](https://img.shields.io/badge/n8n-EA4C89?logo=n8n\&logoColor=white)
+![Make](https://img.shields.io/badge/Make-0085FF?logo=make\&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker\&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai\&logoColor=white)
+![Anthropic](https://img.shields.io/badge/Anthropic-000000?logo=anthropic\&logoColor=white)
+![Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?logo=google\&logoColor=white)
+![Apify](https://img.shields.io/badge/Apify-FF9900?logo=apify\&logoColor=white)
+![Airtable](https://img.shields.io/badge/Airtable-18BFFF?logo=airtable\&logoColor=white)
+![Google Sheets](https://img.shields.io/badge/Google%20Sheets-34A853?logo=googlesheets\&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5\&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3\&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux\&logoColor=black)
+![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos\&logoColor=white)
+
 ---
 
 ## Projets
@@ -46,29 +61,9 @@ no-low-code/
 └── tiktok/                 # TikTok Scraper
     └── json/workflow.json
 ```
-
 ---
 
-## Tech Stack
-
-![n8n](https://img.shields.io/badge/n8n-EA4C89?logo=n8n\&logoColor=white)
-![Make](https://img.shields.io/badge/Make-0085FF?logo=make\&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker\&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai\&logoColor=white)
-![Anthropic](https://img.shields.io/badge/Anthropic-000000?logo=anthropic\&logoColor=white)
-![Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?logo=google\&logoColor=white)
-![Apify](https://img.shields.io/badge/Apify-FF9900?logo=apify\&logoColor=white)
-![Airtable](https://img.shields.io/badge/Airtable-18BFFF?logo=airtable\&logoColor=white)
-![Google Sheets](https://img.shields.io/badge/Google%20Sheets-34A853?logo=googlesheets\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5\&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3\&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux\&logoColor=black)
-![NixOS](https://img.shields.io/badge/NixOS-5277C3?logo=nixos\&logoColor=white)
-
----
-
-## 📬 Contact
+## Contact
 
 **Roméo Cavazza**
 [📧 romeo.cavazza@gmail.com](mailto:romeo.cavazza@gmail.com) · [💼 LinkedIn](https://www.linkedin.com/in/romeo-cavazza/) · [💻 GitHub](https://github.com/RomeoCavazza)
