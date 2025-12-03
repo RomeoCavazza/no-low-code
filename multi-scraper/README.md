@@ -18,7 +18,7 @@
 
 ---
 
-## 🎯 Aperçu
+## Aperçu
 
 Workflow Make pour agrégation multi-sources de veille IA : flux RSS + comptes Instagram tech vers Google Sheets avec enrichissement IA automatique.
 
@@ -30,13 +30,13 @@ Workflow Make pour agrégation multi-sources de veille IA : flux RSS + comptes I
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 📡 **Agrégation RSS** : Flux IA majeurs (NVIDIA, OpenAI, Google, Microsoft...)
-- 📸 **Scraping Instagram** : Comptes tech via Apify
-- 🤖 **Enrichissement IA** : Résumés GPT-3 + analyse d'images Gemini Pro
-- 🔄 **Déduplication** : Évite les doublons automatiquement
-- 📊 **Export structuré** : Titre, URL, date, source, résumé IA
+- **Agrégation RSS** : Flux IA majeurs (NVIDIA, OpenAI, Google, Microsoft...)
+- **Scraping Instagram** : Comptes tech via Apify
+- **Enrichissement IA** : Résumés GPT-3 + analyse d'images Gemini Pro
+- **Déduplication** : Évite les doublons automatiquement
+- **Export structuré** : Titre, URL, date, source, résumé IA
 
 <p align="center">
   <img src="assets/data-sheet.png" alt="Google Sheets Output" width="800">
@@ -44,17 +44,17 @@ Workflow Make pour agrégation multi-sources de veille IA : flux RSS + comptes I
 
 ---
 
-## 🚀 Guide de démarrage rapide
+## Guide de démarrage rapide
 
 ### Prérequis
 
 | Service | Description |
 |---------|-------------|
-| 🔧 Make | Compte gratuit ou payant |
-| 📊 Google Sheets | Compte Google |
-| 🔑 OpenAI API | Avec crédits disponibles |
-| 🌟 Gemini API | Google AI Studio |
-| 🕷️ Apify | Pour scraping Instagram |
+| Make | Compte gratuit ou payant |
+| Google Sheets | Compte Google |
+| OpenAI API | Avec crédits disponibles |
+| Gemini API | Google AI Studio |
+| Apify | Pour scraping Instagram |
 
 ### Étape 1 : Cloner le repository
 
@@ -80,10 +80,10 @@ cd workflow-make-multi-scraper
 
 | Service | Configuration |
 |---------|---------------|
-| 📊 Google Sheets | Connecter compte Google + ID spreadsheet |
-| 🔑 OpenAI | API key depuis platform.openai.com |
-| 🌟 Gemini | API key depuis Google AI Studio |
-| 🕷️ Apify | Token depuis apify.com/account |
+| Google Sheets | Connecter compte Google + ID spreadsheet |
+| OpenAI | API key depuis platform.openai.com |
+| Gemini | API key depuis Google AI Studio |
+| Apify | Token depuis apify.com/account |
 
 ### Étape 5 : Configurer les sources
 
@@ -100,13 +100,13 @@ cd workflow-make-multi-scraper
 
 ---
 
-## 📊 Démo
+## Démo
 
-🔗 [Google Sheet de démonstration](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit)
+[Google Sheet de démonstration](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit)
 
 ---
 
-## 🛠️ Dépannage
+## Dépannage
 
 | Problème | Solution |
 |----------|----------|
@@ -117,7 +117,7 @@ cd workflow-make-multi-scraper
 
 ---
 
-## 📚 Structure du projet
+## Structure du projet
 
 ```
 workflow-make-multi-scraper/

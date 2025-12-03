@@ -18,7 +18,7 @@
 
 ---
 
-## 🎯 Aperçu
+## Aperçu
 
 Ce workflow extrait automatiquement vos emails Gmail, les analyse avec OpenAI GPT-3.5, et affiche les résultats dans une interface web élégante.
 
@@ -30,13 +30,13 @@ Ce workflow extrait automatiquement vos emails Gmail, les analyse avec OpenAI GP
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 📥 **Extraction Gmail** : Récupération automatique des derniers emails
-- 🤖 **Analyse IA** : Résumé et catégorisation par OpenAI
-- 🌐 **Dashboard Web** : Interface moderne pour visualiser les résultats
-- 🔄 **Webhook** : Rafraîchissement à la demande
-- 🐳 **Dockerisé** : Déploiement en une commande
+- **Extraction Gmail** : Récupération automatique des derniers emails
+- **Analyse IA** : Résumé et catégorisation par OpenAI
+- **Dashboard Web** : Interface moderne pour visualiser les résultats
+- **Webhook** : Rafraîchissement à la demande
+- **Dockerisé** : Déploiement en une commande
 
 <p align="center">
   <img src="assets/front-page.png" alt="Interface Web" width="800">
@@ -44,15 +44,15 @@ Ce workflow extrait automatiquement vos emails Gmail, les analyse avec OpenAI GP
 
 ---
 
-## 🚀 Guide de démarrage rapide
+## Guide de démarrage rapide
 
 ### Prérequis
 
 | Outil | Description |
 |-------|-------------|
-| 🐳 Docker | Engine + Compose |
-| 📧 Compte Google | Avec Gmail activé |
-| 🔑 OpenAI API | Avec crédits disponibles |
+| Docker | Engine + Compose |
+| Compte Google | Avec Gmail activé |
+| OpenAI API | Avec crédits disponibles |
 
 ### Étape 1 : Cloner le repository
 
@@ -81,7 +81,7 @@ docker-compose up -d
 
 ### Étape 5 : Configurer les credentials
 
-#### 🔐 Gmail OAuth2
+#### Gmail OAuth2
 
 1. [Google Cloud Console](https://console.cloud.google.com/) → Créer un projet
 2. Activer **Gmail API**
@@ -91,7 +91,7 @@ docker-compose up -d
    - Redirect URI : `http://localhost:5678/rest/oauth2-credential/callback`
 5. Dans n8n : nœud "Get many messages" → Create credential → Connecter
 
-#### 🤖 OpenAI
+#### OpenAI
 
 1. Créer une API key sur [platform.openai.com](https://platform.openai.com/api-keys)
 2. Dans n8n : nœud "Basic LLM Chain" → Create credential → Coller la key
@@ -109,17 +109,17 @@ curl -X POST http://localhost:5678/webhook/refresh-mails
 
 ---
 
-## 🔗 Points d'accès
+## Points d'accès
 
 | Service | URL |
 |---------|-----|
-| 🌐 Interface web | http://localhost:8080 |
-| ⚙️ n8n | http://localhost:5678 |
-| 📄 JSON généré | http://localhost:8080/data/mails-today.json |
+| Interface web | http://localhost:8080 |
+| n8n | http://localhost:5678 |
+| JSON généré | http://localhost:8080/data/mails-today.json |
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 | Fichier | Description |
 |---------|-------------|
@@ -129,7 +129,7 @@ curl -X POST http://localhost:5678/webhook/refresh-mails
 
 ---
 
-## 🛠️ Dépannage
+## Dépannage
 
 | Problème | Solution |
 |----------|----------|

@@ -18,7 +18,7 @@
 
 ---
 
-## 🎯 Aperçu
+## Aperçu
 
 Workflow n8n pour veille TikTok : extraction de vidéos par mots-clés ou comptes, récupération des transcripts VTT, et stockage enrichi dans Airtable.
 
@@ -30,13 +30,13 @@ Workflow n8n pour veille TikTok : extraction de vidéos par mots-clés ou compte
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- 🔍 **Recherche flexible** : Par mots-clés ou comptes spécifiques
-- 📊 **Métriques TikTok** : Vues, likes, commentaires, partages
-- 📝 **Transcripts VTT** : Extraction automatique des sous-titres
-- 🤖 **Analyse IA** : Résumé et insights via OpenAI
-- 💾 **Stockage Airtable** : Base de données structurée
+- **Recherche flexible** : Par mots-clés ou comptes spécifiques
+- **Métriques TikTok** : Vues, likes, commentaires, partages
+- **Transcripts VTT** : Extraction automatique des sous-titres
+- **Analyse IA** : Résumé et insights via OpenAI
+- **Stockage Airtable** : Base de données structurée
 
 <p align="center">
   <img src="assets/request-form.png" alt="Formulaire de requête" width="600">
@@ -44,16 +44,16 @@ Workflow n8n pour veille TikTok : extraction de vidéos par mots-clés ou compte
 
 ---
 
-## 🚀 Guide de démarrage rapide
+## Guide de démarrage rapide
 
 ### Prérequis
 
 | Service | Description |
 |---------|-------------|
-| ⚙️ n8n | Cloud ou self-hosted |
-| 🕷️ Apify | Compte avec TikTok Scraper |
-| 💾 Airtable | Base de données |
-| 🔑 OpenAI API | Avec crédits disponibles |
+| n8n | Cloud ou self-hosted |
+| Apify | Compte avec TikTok Scraper |
+| Airtable | Base de données |
+| OpenAI API | Avec crédits disponibles |
 
 ### Étape 1 : Cloner le repository
 
@@ -92,9 +92,9 @@ cd workflow-n8n-tiktok
 
 | Service | Configuration |
 |---------|---------------|
-| 🕷️ Apify | Token depuis apify.com/account |
-| 💾 Airtable | API key + Base ID + Table name |
-| 🔑 OpenAI | API key depuis platform.openai.com |
+| Apify | Token depuis apify.com/account |
+| Airtable | API key + Base ID + Table name |
+| OpenAI | API key depuis platform.openai.com |
 
 ### Étape 5 : Activer et utiliser
 
@@ -110,7 +110,7 @@ cd workflow-n8n-tiktok
 
 ---
 
-## 📋 Paramètres du formulaire
+## Paramètres du formulaire
 
 | Champ | Description | Exemple |
 |-------|-------------|---------|
@@ -121,7 +121,7 @@ cd workflow-n8n-tiktok
 
 ---
 
-## 🛠️ Dépannage
+## Dépannage
 
 | Problème | Solution |
 |----------|----------|
@@ -132,7 +132,7 @@ cd workflow-n8n-tiktok
 
 ---
 
-## 📚 Structure du projet
+## Structure du projet
 
 ```
 workflow-n8n-tiktok/

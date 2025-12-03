@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/🚀-Automation_Workflows-6D00CC?style=for-the-badge" alt="Automation Workflows">
+  <img src="https://img.shields.io/badge/Automation_Workflows-6D00CC?style=for-the-badge" alt="Automation Workflows">
 </p>
 
 <h1 align="center">⚡ No-Low-Code Workflows</h1>
@@ -26,7 +26,7 @@
 
 ---
 
-## 📦 Workflows
+## Workflows
 
 ### 📧 [Gmail AI Dashboard](gmail/)
 
@@ -34,10 +34,10 @@ Automatisation Gmail avec analyse IA et interface web moderne.
 
 | Feature | Description |
 |---------|-------------|
-| 📥 Extraction | Récupération automatique des emails |
-| 🤖 Analyse IA | Résumé et détection d'urgence (OpenAI) |
-| 🌐 Dashboard | Interface web avec tri, épinglage, archivage |
-| 🐳 Docker | Déploiement en une commande |
+| Extraction | Récupération automatique des emails |
+| Analyse IA | Résumé et détection d'urgence (OpenAI) |
+| Dashboard | Interface web avec tri, épinglage, archivage |
+| Docker | Déploiement en une commande |
 
 **Stack** : `n8n` · `OpenAI GPT-3.5` · `Docker` · `JavaScript`
 
@@ -53,10 +53,10 @@ Veille IA automatisée : RSS + Instagram → Google Sheets enrichi.
 
 | Feature | Description |
 |---------|-------------|
-| 📡 Agrégation | Flux RSS IA + comptes Instagram tech |
-| 🤖 Enrichissement | Résumés GPT + analyse images Gemini |
-| 🔄 Déduplication | Évite les doublons automatiquement |
-| 📊 Export | Google Sheets structuré |
+| Agrégation | Flux RSS IA + comptes Instagram tech |
+| Enrichissement | Résumés GPT + analyse images Gemini |
+| Déduplication | Évite les doublons automatiquement |
+| Export | Google Sheets structuré |
 
 **Stack** : `Make` · `OpenAI` · `Gemini` · `Apify` · `Google Sheets`
 
@@ -74,10 +74,10 @@ Extraction TikTok avec transcripts et analyse IA → Airtable.
 
 | Feature | Description |
 |---------|-------------|
-| 🔍 Recherche | Par mots-clés ou comptes spécifiques |
-| 📊 Métriques | Vues, likes, commentaires, partages |
-| 📝 Transcripts | Extraction automatique des sous-titres VTT |
-| 🤖 Analyse IA | Résumé et insights via OpenAI |
+| Recherche | Par mots-clés ou comptes spécifiques |
+| Métriques | Vues, likes, commentaires, partages |
+| Transcripts | Extraction automatique des sous-titres VTT |
+| Analyse IA | Résumé et insights via OpenAI |
 
 **Stack** : `n8n` · `Apify` · `Airtable` · `OpenAI`
 
@@ -87,26 +87,26 @@ Extraction TikTok avec transcripts et analyse IA → Airtable.
 
 ---
 
-## 📁 Structure
+## Structure
 
 ```
 no-low-code/
-├── gmail/                  # 📧 Gmail AI Dashboard
+├── gmail/                  # Gmail AI Dashboard
 │   ├── docker-compose.yml
 │   ├── json/workflow.json
 │   ├── assets/
 │   └── frontend/
-├── multi-scraper/          # 🔍 Multi-Scraper IA
+├── multi-scraper/          # Multi-Scraper IA
 │   ├── json/workflow.json
 │   └── assets/
-└── tiktok/                 # 🎵 TikTok Intelligence
+└── tiktok/                 # TikTok Intelligence
     ├── json/workflow.json
     └── assets/
 ```
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 | Catégorie | Outils |
 |-----------|--------|
@@ -119,15 +119,15 @@ no-low-code/
 
 ---
 
-## 🔗 Repos séparés (Productivityio)
+## Repos séparés (Productivityio)
 
 Ces workflows sont également disponibles individuellement :
 
 | Workflow | Repo |
 |----------|------|
-| 📧 Gmail | [workflow-n8n-gmail](https://github.com/Productivityio/workflow-n8n-gmail) |
-| 🔍 Multi-Scraper | [workflow-make-multi-scraper](https://github.com/Productivityio/workflow-make-multi-scraper) |
-| 🎵 TikTok | [workflow-n8n-tiktok](https://github.com/Productivityio/workflow-n8n-tiktok) |
+| Gmail | [workflow-n8n-gmail](https://github.com/Productivityio/workflow-n8n-gmail) |
+| Multi-Scraper | [workflow-make-multi-scraper](https://github.com/Productivityio/workflow-make-multi-scraper) |
+| TikTok | [workflow-n8n-tiktok](https://github.com/Productivityio/workflow-n8n-tiktok) |
 
 ---
 
