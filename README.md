@@ -1,80 +1,136 @@
-# Workflows d’Automatisation No-Code / Low-Code
+<p align="center">
+  <img src="https://img.shields.io/badge/🚀-Automation_Workflows-6D00CC?style=for-the-badge" alt="Automation Workflows">
+</p>
 
-Portfolio de **3 projets d’automatisation professionnels** : orchestration de workflows, intégration d’APIs et développement full-stack.
+<h1 align="center">⚡ No-Low-Code Workflows</h1>
 
----
+<p align="center">
+  <strong>3 projets d'automatisation professionnels : orchestration, IA et intégrations</strong>
+</p>
 
-![n8n](https://img.shields.io/badge/n8n-EA4C89?logo=n8n\&logoColor=white)
-![Make](https://img.shields.io/badge/Make-0085FF?logo=make\&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker\&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai\&logoColor=white)
-![Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?logo=google\&logoColor=white)
-![Apify](https://img.shields.io/badge/Apify-FF9900?logo=apify\&logoColor=white)
-![Airtable](https://img.shields.io/badge/Airtable-18BFFF?logo=airtable\&logoColor=white)
-![Google Sheets](https://img.shields.io/badge/Google%20Sheets-34A853?logo=googlesheets\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5\&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3\&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n">
+  <img src="https://img.shields.io/badge/Make-6D00CC?style=for-the-badge&logo=integromat&logoColor=white" alt="Make">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI">
+  <img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini">
+</p>
 
----
-
-## Projets
-
-### 1. [Gmail Automation avec IA](gmail/)
-
-Système complet qui récupère vos emails quotidiennement, les analyse avec **OpenAI** pour générer un résumé intelligent avec détection d’urgence, puis les affiche dans une interface web moderne avec fonctions de tri, épinglage et archivage.
-Déployé en **Docker** avec **n8n** pour l’orchestration.
-
-**Stack** : n8n · OpenAI GPT-3.5 · Docker · Vanilla JS
-**Démo** : [localhost:8080](http://localhost:8080) | [n8n](http://localhost:5678)
+<p align="center">
+  <img src="https://img.shields.io/badge/Apify-97D700?style=for-the-badge&logo=apify&logoColor=black" alt="Apify">
+  <img src="https://img.shields.io/badge/Airtable-18BFFF?style=for-the-badge&logo=airtable&logoColor=white" alt="Airtable">
+  <img src="https://img.shields.io/badge/Google_Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Google Sheets">
+  <img src="https://img.shields.io/badge/Gmail_API-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail API">
+  <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok">
+</p>
 
 ---
 
-### 2. [Multi-Scraper – Veille IA](multi-scraper/)
+## 📦 Workflows
 
-Workflow **Make** qui agrège automatiquement du contenu tech depuis des flux RSS spécialisés et des comptes **Instagram** (NVIDIA, OpenAI, Google…), enrichit chaque post avec des résumés IA et analyse d’images via **Gemini**, puis centralise le tout dans **Google Sheets** avec déduplication.
+### 📧 [Gmail AI Dashboard](gmail/)
 
-**Stack** : Make · Google Sheets · OpenAI · Gemini · Apify
+Automatisation Gmail avec analyse IA et interface web moderne.
+
+| Feature | Description |
+|---------|-------------|
+| 📥 Extraction | Récupération automatique des emails |
+| 🤖 Analyse IA | Résumé et détection d'urgence (OpenAI) |
+| 🌐 Dashboard | Interface web avec tri, épinglage, archivage |
+| 🐳 Docker | Déploiement en une commande |
+
+**Stack** : `n8n` · `OpenAI GPT-3.5` · `Docker` · `JavaScript`
+
+<p align="center">
+  <img src="gmail/assets/n8n-workflow.png" alt="Gmail Workflow" width="700">
+</p>
+
+---
+
+### 🔍 [Multi-Scraper IA](multi-scraper/)
+
+Veille IA automatisée : RSS + Instagram → Google Sheets enrichi.
+
+| Feature | Description |
+|---------|-------------|
+| 📡 Agrégation | Flux RSS IA + comptes Instagram tech |
+| 🤖 Enrichissement | Résumés GPT + analyse images Gemini |
+| 🔄 Déduplication | Évite les doublons automatiquement |
+| 📊 Export | Google Sheets structuré |
+
+**Stack** : `Make` · `OpenAI` · `Gemini` · `Apify` · `Google Sheets`
+
 **Démo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit)
 
----
-
-### 3. [TikTok Intelligence → Airtable](tiktok/)
-
-Workflow **n8n** avec formulaire web permettant de scraper **TikTok** par mots-clés ou comptes, d’extraire automatiquement les transcripts depuis les sous-titres VTT, d’analyser le contenu avec l’IA, et de stocker toutes les données enrichies dans **Airtable** pour analyse.
-
-**Stack** : n8n · Apify · Airtable · Anthropic · OpenAI
+<p align="center">
+  <img src="multi-scraper/assets/make-workflow.png" alt="Make Workflow" width="700">
+</p>
 
 ---
 
-## Structure
+### 🎵 [TikTok Intelligence](tiktok/)
+
+Extraction TikTok avec transcripts et analyse IA → Airtable.
+
+| Feature | Description |
+|---------|-------------|
+| 🔍 Recherche | Par mots-clés ou comptes spécifiques |
+| 📊 Métriques | Vues, likes, commentaires, partages |
+| 📝 Transcripts | Extraction automatique des sous-titres VTT |
+| 🤖 Analyse IA | Résumé et insights via OpenAI |
+
+**Stack** : `n8n` · `Apify` · `Airtable` · `OpenAI`
+
+<p align="center">
+  <img src="tiktok/assets/n8n-workflow.png" alt="TikTok Workflow" width="700">
+</p>
+
+---
+
+## 📁 Structure
 
 ```
 no-low-code/
-├── gmail/                  # Gmail Automation
+├── gmail/                  # 📧 Gmail AI Dashboard
 │   ├── docker-compose.yml
 │   ├── json/workflow.json
-│   └── front-page/
-├── multi-scraper/          # Multi-Scraper Make
-│   └── json/workflow.json
-└── tiktok/                 # TikTok Scraper
-    └── json/workflow.json
+│   ├── assets/
+│   └── frontend/
+├── multi-scraper/          # 🔍 Multi-Scraper IA
+│   ├── json/workflow.json
+│   └── assets/
+└── tiktok/                 # 🎵 TikTok Intelligence
+    ├── json/workflow.json
+    └── assets/
 ```
 
 ---
 
-## Technologies principales
+## 🛠️ Technologies
 
-**Automation** : n8n · Make · Docker
-
-**IA** : OpenAI GPT-3.5 · Google Gemini · Anthropic Claude
-
-**APIs** : Gmail · Apify · Airtable · Google Sheets
-
-**Frontend** : Vanilla JavaScript · HTML5 · CSS3
+| Catégorie | Outils |
+|-----------|--------|
+| **Automation** | n8n, Make, Docker |
+| **IA** | OpenAI GPT-3.5, Google Gemini |
+| **Scraping** | Apify |
+| **Databases** | Airtable, Google Sheets |
+| **APIs** | Gmail, TikTok |
+| **Frontend** | JavaScript, HTML5, CSS3 |
 
 ---
 
-## Contact
+## 🔗 Repos séparés (Productivityio)
 
-[romeo.cavazza@gmail.com](mailto:romeo.cavazza@gmail.com) · [LinkedIn](https://www.linkedin.com/in/romeo-cavazza/)
+Ces workflows sont également disponibles individuellement :
+
+| Workflow | Repo |
+|----------|------|
+| 📧 Gmail | [workflow-n8n-gmail](https://github.com/Productivityio/workflow-n8n-gmail) |
+| 🔍 Multi-Scraper | [workflow-make-multi-scraper](https://github.com/Productivityio/workflow-make-multi-scraper) |
+| 🎵 TikTok | [workflow-n8n-tiktok](https://github.com/Productivityio/workflow-n8n-tiktok) |
+
+---
+
+<p align="center">
+  Made by <a href="https://github.com/RomeoCavazza">Romeo Cavazza</a>
+</p>
