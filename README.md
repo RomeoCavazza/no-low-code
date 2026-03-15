@@ -62,6 +62,14 @@ flowchart LR
 
 ### [Gmail AI Dashboard](gmail/)
 
+```
+gmail/
+├── docker-compose.yml
+├── json/workflow.json
+├── assets/
+└── frontend/
+```
+
 End-to-end pipeline: fetch Gmail via the official API, analyse with OpenAI (summaries, urgency detection), then serve results in a **web interface** (sort, pin, archive, filters). One-command deploy with **Docker**. Ideal for centralising email monitoring and prioritising messages without opening Gmail.
 
 | Role | Details |
@@ -71,22 +79,32 @@ End-to-end pipeline: fetch Gmail via the official API, analyse with OpenAI (summ
 | UI | Vanilla JS dashboard (HTML5, CSS3, localStorage, Lucide) |
 | Deploy | `docker-compose` (n8n + static server) |
 
-```
-gmail/
-├── docker-compose.yml
-├── json/workflow.json
-├── assets/
-└── frontend/
-```
-
 ![Gmail Workflow](gmail/assets/n8n-workflow.png)
+
+*n8n workflow: trigger, Gmail fetch, OpenAI analysis, write JSON.*
+
 ![Gmail Frontend](gmail/assets/front-page.png)
+
+*Web dashboard: AI summary, urgency badge, filters and email actions.*
+
+**Install (this workflow only)**
+
+```bash
+git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code && git sparse-checkout set gmail && cd gmail
+```
 
 ---
 
 ### [Multi-Scraper IA](multi-scraper/)
 
-Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Google, Microsoft…) and **Instagram** tech accounts via Apify, enrich with GPT summaries and Gemini image analysis, **deduplicate**, then export to **Google Sheets**. Run an AI monitoring dashboard with no code.
+```
+multi-scraper/
+├── json/workflow.json
+└── assets/
+```
+
+Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Google, Microsoft…) and **Instagram** tech accounts via Apify, enrich with GPT summaries and Gemini image analysis, **deduplicate**, then export to **Google Sheets**. Run an AI monitoring dashboard with no code. **Demo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit).
 
 | Role | Details |
 |------|--------|
@@ -95,20 +113,30 @@ Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Goog
 | Deduplication | Pre-export processing to avoid duplicates |
 | Export | Google Sheets (Title, URL, date, source, AI summary) |
 
-**Demo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit).
-
-```
-multi-scraper/
-├── json/workflow.json
-└── assets/
-```
-
 ![Make Workflow](multi-scraper/assets/make-workflow.png)
+
+*Make scenario: RSS + Instagram aggregation, OpenAI + Gemini enrichment, deduplication, Google Sheets export.*
+
 ![Multi-Scraper Data](multi-scraper/assets/data-sheet.png)
+
+*Google Sheets output: title, URL, date, source, AI summary.*
+
+**Install (this workflow only)**
+
+```bash
+git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code && git sparse-checkout set multi-scraper && cd multi-scraper
+```
 
 ---
 
 ### [TikTok Intelligence](tiktok/)
+
+```
+tiktok/
+├── json/workflow.json
+└── assets/
+```
 
 TikTok extraction by **keywords** or **accounts**: metrics (views, likes, comments, shares), **VTT subtitle** extraction, summaries and insights via OpenAI, then save to **Airtable**. Useful for creator monitoring, trends or video content analysis.
 
@@ -119,14 +147,20 @@ TikTok extraction by **keywords** or **accounts**: metrics (views, likes, commen
 | Transcripts | Automatic VTT subtitles |
 | Analysis | Summaries and insights OpenAI → Airtable |
 
-```
-tiktok/
-├── json/workflow.json
-└── assets/
-```
-
 ![TikTok Workflow](tiktok/assets/n8n-workflow.png)
+
+*n8n workflow: web form, Apify TikTok, VTT + OpenAI, Airtable.*
+
 ![TikTok Data](tiktok/assets/data-table.png)
+
+*Airtable table: video URL, author, metrics, transcript, AI summary.*
+
+**Install (this workflow only)**
+
+```bash
+git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code && git sparse-checkout set tiktok && cd tiktok
+```
 
 ---
 
