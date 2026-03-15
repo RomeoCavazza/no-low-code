@@ -43,9 +43,9 @@ no-low-code/
 | **APIs** | Gmail API, TikTok (via Apify) |
 | **Runtime** | Docker (Gmail), Make/n8n cloud (others) |
 
-**Research context** : This repository is used for research on **how to collect and use data from social networks and communication channels** (email, TikTok, Instagram, RSS) **through no-code / low-code automation tools**. The goal is to assess orchestration (n8n, Make), scraping (Apify), AI enrichment (LLM, vision) and storage (Airtable, Google Sheets) to build reproducible pipelines without heavy custom development.
-
 ### Global architecture
+
+**Research context** : This repository is used for research on **how to collect and use data from social networks and communication channels** (email, TikTok, Instagram, RSS) **through no-code / low-code automation tools**. The goal is to assess orchestration (n8n, Make), scraping (Apify), AI enrichment (LLM, vision) and storage (Airtable, Google Sheets) to build reproducible pipelines without heavy custom development.
 
 The three workflows share a single high-level pattern: **data sources → orchestration → AI enrichment → storage or delivery**.
 
