@@ -15,20 +15,7 @@
 
 This repository bundles **three automation workflows** (n8n, Make) with AI integration (OpenAI, Gemini), deployable standalone or via Docker. Each subfolder contains the exported workflow, assets and, when applicable, a frontend or demo.
 
-**Research context** : This repository is used for research on **how to collect and use data from social networks and communication channels** (email, TikTok, Instagram, RSS) **through no-code / low-code automation tools**. The goal is to assess orchestration (n8n, Make), scraping (Apify), AI enrichment (LLM, vision) and storage (Airtable, Google Sheets) to build reproducible pipelines without heavy custom development.
-
-## Technical Core · Repository structure
-
-| Layer | Stack |
-|-------|--------|
-| **Orchestration** | n8n, Make |
-| **AI** | OpenAI GPT-3.5, Google Gemini |
-| **Scraping** | Apify (TikTok, Instagram) |
-| **Storage** | Airtable, Google Sheets, JSON (file) |
-| **APIs** | Gmail API, TikTok (via Apify) |
-| **Runtime** | Docker (Gmail), Make/n8n cloud (others) |
-
-**Repository structure**
+### Repository structure
 
 ```
 no-low-code/
@@ -45,9 +32,20 @@ no-low-code/
     └── assets/
 ```
 
----
+### Technical Core
 
-## Global architecture
+| Layer | Stack |
+|-------|--------|
+| **Orchestration** | n8n, Make |
+| **AI** | OpenAI GPT-3.5, Google Gemini |
+| **Scraping** | Apify (TikTok, Instagram) |
+| **Storage** | Airtable, Google Sheets, JSON (file) |
+| **APIs** | Gmail API, TikTok (via Apify) |
+| **Runtime** | Docker (Gmail), Make/n8n cloud (others) |
+
+**Research context** : This repository is used for research on **how to collect and use data from social networks and communication channels** (email, TikTok, Instagram, RSS) **through no-code / low-code automation tools**. The goal is to assess orchestration (n8n, Make), scraping (Apify), AI enrichment (LLM, vision) and storage (Airtable, Google Sheets) to build reproducible pipelines without heavy custom development.
+
+### Global architecture
 
 The three workflows share a single high-level pattern: **data sources → orchestration → AI enrichment → storage or delivery**.
 
