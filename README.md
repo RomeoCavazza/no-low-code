@@ -1,8 +1,10 @@
 <!-- markdownlint-disable MD033 -->
 <div align="center">
+  <img src="gmail/assets/n8n-logo.png" alt="n8n" width="120">
+  <img src="multi-scraper/assets/make-logo.png" alt="Make" width="160">
+  <br /><br />
   <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n">
   <img src="https://img.shields.io/badge/Make-6D00CC?style=for-the-badge&logo=integromat&logoColor=white" alt="Make">
-  <br /><br />
   <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI">
   <img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
