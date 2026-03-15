@@ -1,20 +1,19 @@
 <!-- markdownlint-disable MD033 -->
 <div align="center">
-  <strong>No-Low-Code Workflows</strong>
-  <br /><br />
   <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n">
   <img src="https://img.shields.io/badge/Make-6D00CC?style=for-the-badge&logo=integromat&logoColor=white" alt="Make">
+  <br /><br />
   <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI">
   <img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
 </div>
 <!-- markdownlint-enable MD033 -->
 
+---
+
 This repository bundles **three automation workflows** (n8n, Make) with AI integration (OpenAI, Gemini), deployable standalone or via Docker. Each subfolder contains the exported workflow, assets and, when applicable, a frontend or demo.
 
 **Research context** : This repository is used for research on **how to collect and use data from social networks and communication channels** (email, TikTok, Instagram, RSS) **through no-code / low-code automation tools**. The goal is to assess orchestration (n8n, Make), scraping (Apify), AI enrichment (LLM, vision) and storage (Airtable, Google Sheets) to build reproducible pipelines without heavy custom development.
-
----
 
 ## Technical Core · Repository structure
 
