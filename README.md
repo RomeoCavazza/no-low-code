@@ -158,6 +158,10 @@ cd no-low-code && git sparse-checkout set tiktok && cd tiktok
 
 *n8n workflow: web form, Apify TikTok, VTT + OpenAI, Airtable.*
 
+![TikTok Request form](tiktok/assets/request-form.png)
+
+*Web form: keywords, accounts, period, results.*
+
 ![TikTok Data](tiktok/assets/data-table.png)
 
 *Airtable table: video URL, author, metrics, transcript, AI summary.*
