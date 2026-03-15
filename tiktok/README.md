@@ -22,6 +22,16 @@
 
 Workflow n8n pour veille TikTok : extraction de vidéos par mots-clés ou comptes, récupération des transcripts VTT, et stockage enrichi dans Airtable.
 
+### Technical Core
+
+| Layer | Implementation |
+|-------|----------------|
+| **Orchestration** | n8n |
+| **Source** | Apify (TikTok Scraper) |
+| **IA** | OpenAI (résumés, insights) |
+| **Stockage** | Airtable |
+| **Entrée** | Webhook / formulaire web |
+
 **Architecture** : `Formulaire Web → n8n → Apify TikTok → VTT → OpenAI → Airtable`
 
 <p align="center">

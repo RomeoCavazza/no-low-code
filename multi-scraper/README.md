@@ -22,6 +22,16 @@
 
 Workflow Make pour agrégation multi-sources de veille IA : flux RSS + comptes Instagram tech vers Google Sheets avec enrichissement IA automatique.
 
+### Technical Core
+
+| Layer | Implementation |
+|-------|----------------|
+| **Orchestration** | Make |
+| **Sources** | RSS, Apify (Instagram) |
+| **IA** | OpenAI GPT-3.5, Google Gemini (images) |
+| **Stockage** | Google Sheets |
+| **Runtime** | Make cloud |
+
 **Architecture** : `RSS + Instagram → Make → OpenAI + Gemini → Google Sheets`
 
 <p align="center">
