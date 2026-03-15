@@ -2,7 +2,7 @@
   <img src="assets/n8n-logo.png" alt="n8n Logo" width="120">
 </p>
 
-<h1 align="center">🎵 TikTok Intelligence</h1>
+<h1 align="center">TikTok Intelligence</h1>
 
 <p align="center">
   <strong>Automated TikTok monitoring: extraction, transcripts and AI analysis</strong>

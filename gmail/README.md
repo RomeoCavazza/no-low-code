@@ -2,7 +2,7 @@
   <img src="assets/n8n-logo.png" alt="n8n Logo" width="120">
 </p>
 
-<h1 align="center">📧 Gmail AI Dashboard</h1>
+<h1 align="center">Gmail AI Dashboard</h1>
 
 <p align="center">
   <strong>Gmail automation with AI analysis and modern web interface</strong>

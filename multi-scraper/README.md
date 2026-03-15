@@ -2,7 +2,7 @@
   <img src="assets/make-logo.png" alt="Make Logo" width="160">
 </p>
 
-<h1 align="center">🔍 Multi-Scraper IA</h1>
+<h1 align="center">Multi-Scraper IA</h1>
 
 <p align="center">
   <strong>Automated AI monitoring: RSS + Instagram → enriched Google Sheets</strong>

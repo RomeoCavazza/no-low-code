@@ -46,29 +46,15 @@ no-low-code/
 
 ---
 
-## Global architecture of the three projects
+## Global architecture
 
-The three workflows share a common pattern: **data source → orchestration → AI enrichment → storage / delivery**.
+The three workflows share a single high-level pattern: **data sources → orchestration → AI enrichment → storage or delivery**.
 
 ```mermaid
 flowchart LR
-    subgraph Gmail["📧 Gmail AI Dashboard"]
-        G1[Schedule / Webhook] --> G2[Gmail API]
-        G2 --> G3[OpenAI]
-        G3 --> G4[JSON]
-        G4 --> G5[Dashboard Web]
-    end
-    subgraph Multi["🔍 Multi-Scraper IA"]
-        M1[RSS + Instagram] --> M2[Make]
-        M2 --> M3[OpenAI + Gemini]
-        M3 --> M4[Deduplication]
-        M4 --> M5[Google Sheets]
-    end
-    subgraph TikTok["🎵 TikTok Intelligence"]
-        T1[Webhook / Form] --> T2[Apify TikTok]
-        T2 --> T3[VTT + OpenAI]
-        T3 --> T4[Airtable]
-    end
+    A[Data sources] --> B[Orchestration]
+    B --> C[AI enrichment]
+    C --> D[Storage / delivery]
 ```
 
 ---
