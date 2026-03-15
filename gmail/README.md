@@ -5,7 +5,7 @@
 <h1 align="center">📧 Gmail AI Dashboard</h1>
 
 <p align="center">
-  <strong>Automatisation Gmail avec analyse IA et interface web moderne</strong>
+  <strong>Gmail automation with AI analysis and modern web interface</strong>
 </p>
 
 <p align="center">
@@ -18,23 +18,23 @@
 
 ---
 
-## Aperçu
+## Overview
 
-Ce workflow extrait automatiquement vos emails Gmail, les analyse avec OpenAI GPT-3.5, et affiche les résultats dans une interface web élégante.
+This workflow automatically fetches your Gmail messages, analyses them with OpenAI GPT-3.5, and displays results in a web interface.
 
 ### Technical Core
 
 | Layer | Implementation |
 |-------|----------------|
 | **Orchestration** | n8n |
-| **IA** | OpenAI GPT-3.5 |
-| **Données** | Gmail API |
+| **AI** | OpenAI GPT-3.5 |
+| **Data** | Gmail API |
 | **Interface** | Vanilla JS, HTML5, CSS3, localStorage |
 | **Runtime** | Docker + docker-compose |
 
-**Architecture** : `Gmail API → n8n → OpenAI GPT-3.5 → JSON → Interface Web`
+**Architecture** : `Gmail API → n8n → OpenAI GPT-3.5 → JSON → Web Interface`
 
-Détail du pipeline n8n :
+Pipeline detail:
 
 ```
 Trigger (Schedule/Webhook/Manual)
@@ -48,7 +48,7 @@ OpenAI Analysis → JSON
 Write File → /data/mails-today.json
 ```
 
-**Déclencheurs** : Schedule (quotidien 18h00) · Webhook `/webhook/refresh-mails` · Manual (bouton "Test workflow")
+**Triggers** : Schedule (daily 6pm) · Webhook `/webhook/refresh-mails` · Manual ("Test workflow" button)
 
 <p align="center">
   <img src="assets/n8n-workflow.png" alt="n8n Workflow" width="800">
@@ -56,96 +56,96 @@ Write File → /data/mails-today.json
 
 ---
 
-## Fonctionnalités
+## Features
 
-- **Extraction Gmail** : Récupération automatique des derniers emails
-- **Analyse IA** : Résumé et catégorisation par OpenAI
-- **Dashboard Web** : Résumé IA quotidien avec badge d'urgence ; gestion des emails (épingler, archiver, supprimer, restaurer) ; filtres recherche temps réel (`/`), par expéditeur, épinglés ; états vides contextuels
-- **Webhook** : Rafraîchissement à la demande
-- **Dockerisé** : Déploiement en une commande
+- **Gmail extraction** : Automatic fetch of latest emails
+- **AI analysis** : Summary and categorisation via OpenAI
+- **Web dashboard** : Daily AI summary with urgency badge; email actions (pin, archive, delete, restore); real-time search filter (`/`), by sender, pinned; contextual empty states
+- **Webhook** : Refresh on demand
+- **Docker** : One-command deploy
 
-**Stack interface** : HTML5, CSS3, Vanilla JavaScript, localStorage · Icons : Lucide
+**Interface stack** : HTML5, CSS3, Vanilla JavaScript, localStorage · Icons: Lucide
 
 <p align="center">
-  <img src="assets/front-page.png" alt="Interface Web" width="800">
+  <img src="assets/front-page.png" alt="Web Interface" width="800">
 </p>
 
 ---
 
-## Guide de démarrage rapide
+## Quick start
 
-### Prérequis
+### Prerequisites
 
-| Outil | Description |
-|-------|-------------|
+| Tool | Description |
+|------|-------------|
 | Docker | Engine + Compose |
-| Compte Google | Avec Gmail activé |
-| OpenAI API | Avec crédits disponibles |
+| Google account | Gmail enabled |
+| OpenAI API | Credits available |
 
-### Étape 1 : Cloner le repository
+### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/Productivityio/workflow-n8n-gmail.git
-cd workflow-n8n-gmail
+git clone https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code/gmail
 ```
 
-### Étape 2 : Préparer les permissions
+### Step 2: Prepare permissions
 
 ```bash
 docker run --rm -v "$(pwd)/frontend/data:/data" alpine sh -c "chmod -R 777 /data"
 ```
 
-### Étape 3 : Démarrer les services
+### Step 3: Start services
 
 ```bash
 docker-compose up -d
-# Attendre 30 secondes pour l'initialisation
+# Wait ~30 seconds for init
 ```
 
-### Étape 4 : Importer le workflow
+### Step 4: Import the workflow
 
-1. Ouvrir **http://localhost:5678**
+1. Open **http://localhost:5678**
 2. Menu → **Import from File** → `json/workflow.json`
 
-### Étape 5 : Configurer les credentials
+### Step 5: Configure credentials
 
 #### Gmail OAuth2
 
-1. [Google Cloud Console](https://console.cloud.google.com/) → Créer un projet
-2. Activer **Gmail API**
-3. Créer un **OAuth 2.0 Client ID** (type: Web app)
-4. Configurer :
-   - Authorized origins : `http://localhost:5678`
-   - Redirect URI : `http://localhost:5678/rest/oauth2-credential/callback`
-5. Dans n8n : nœud "Get many messages" → Create credential → Connecter
+1. [Google Cloud Console](https://console.cloud.google.com/) → Create a project
+2. Enable **Gmail API**
+3. Create **OAuth 2.0 Client ID** (type: Web application)
+4. Set:
+   - Authorized origins: `http://localhost:5678`
+   - Redirect URI: `http://localhost:5678/rest/oauth2-credential/callback`
+5. In n8n: "Get many messages" node → Create credential → Connect
 
 #### OpenAI
 
-1. Créer une API key sur [platform.openai.com](https://platform.openai.com/api-keys)
-2. Dans n8n : nœud "Basic LLM Chain" → Create credential → Coller la key
+1. Create an API key at [platform.openai.com](https://platform.openai.com/api-keys)
+2. In n8n: "Basic LLM Chain" node → Create credential → Paste key
 
-### Étape 6 : Tester et activer
+### Step 6: Test and activate
 
 ```bash
-# Test dans n8n : Bouton "Test workflow"
+# In n8n: "Test workflow" button
 cat frontend/data/mails-today.json
 
-# Activer le workflow : Toggle "Active" → ON
-# Webhook manuel : 
+# Activate workflow: Toggle "Active" → ON
+# Manual webhook:
 curl -X POST http://localhost:5678/webhook/refresh-mails
 ```
 
 ---
 
-## Points d'accès
+## Endpoints
 
 | Service | URL |
 |---------|-----|
-| Interface web | http://localhost:8080 |
+| Web interface | http://localhost:8080 |
 | n8n | http://localhost:5678 |
-| JSON généré | http://localhost:8080/data/mails-today.json |
+| Generated JSON | http://localhost:8080/data/mails-today.json |
 
-**Flux interface** : Clic "Actualiser" → Webhook n8n → Gmail API → OpenAI → `mails-today.json` → rechargement de l’interface.
+**Interface flow** : Click "Refresh" → n8n webhook → Gmail API → OpenAI → `mails-today.json` → interface reload.
 
 ---
 
@@ -160,23 +160,17 @@ curl -X POST http://localhost:5678/webhook/refresh-mails
 
 ## Documentation
 
-| Fichier | Description |
-|---------|-------------|
-| `rapport.md` | Difficultés techniques rencontrées |
+| File | Description |
+|------|-------------|
+| `rapport.md` | Technical issues encountered |
 
 ---
 
-## Dépannage
+## Troubleshooting
 
-| Problème | Solution |
-|----------|----------|
-| Erreur OAuth | Vérifier les redirect URIs dans Google Console |
-| JSON vide | Tester manuellement le workflow dans n8n |
-| Port occupé | Modifier les ports dans `docker-compose.yml` |
-| Debug interface | `console.log(window.state)` pour l’état ; `localStorage.clear()` pour réinitialiser |
-
----
-
-<p align="center">
-  Made by <a href="https://github.com/Productivityio">Productivityio</a>
-</p>
+| Issue | Solution |
+|-------|----------|
+| OAuth error | Check redirect URIs in Google Console |
+| Empty JSON | Run the workflow manually in n8n |
+| Port in use | Change ports in `docker-compose.yml` |
+| Interface debug | `console.log(window.state)` for state; `localStorage.clear()` to reset |

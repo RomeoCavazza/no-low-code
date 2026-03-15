@@ -5,7 +5,7 @@
 <h1 align="center">🔍 Multi-Scraper IA</h1>
 
 <p align="center">
-  <strong>Veille IA automatisée : RSS + Instagram → Google Sheets enrichi</strong>
+  <strong>Automated AI monitoring: RSS + Instagram → enriched Google Sheets</strong>
 </p>
 
 <p align="center">
@@ -18,9 +18,9 @@
 
 ---
 
-## Aperçu
+## Overview
 
-Workflow Make pour agrégation multi-sources de veille IA : flux RSS + comptes Instagram tech vers Google Sheets avec enrichissement IA automatique.
+Make workflow for multi-source AI monitoring: RSS feeds + Instagram tech accounts → Google Sheets with automatic AI enrichment.
 
 ### Technical Core
 
@@ -28,8 +28,8 @@ Workflow Make pour agrégation multi-sources de veille IA : flux RSS + comptes I
 |-------|----------------|
 | **Orchestration** | Make |
 | **Sources** | RSS, Apify (Instagram) |
-| **IA** | OpenAI GPT-3.5, Google Gemini (images) |
-| **Stockage** | Google Sheets |
+| **AI** | OpenAI GPT-3.5, Google Gemini (images) |
+| **Storage** | Google Sheets |
 | **Runtime** | Make cloud |
 
 **Architecture** : `RSS + Instagram → Make → OpenAI + Gemini → Google Sheets`
@@ -40,108 +40,102 @@ Workflow Make pour agrégation multi-sources de veille IA : flux RSS + comptes I
 
 ---
 
-## Fonctionnalités
+## Features
 
-- **Agrégation RSS** : Flux IA majeurs (NVIDIA, OpenAI, Google, Microsoft...)
-- **Scraping Instagram** : Comptes tech via Apify
-- **Enrichissement IA** : Résumés GPT-3 + analyse d'images Gemini Pro
-- **Déduplication** : Évite les doublons automatiquement
-- **Export structuré** : Titre, URL, date, source, résumé IA
+- **RSS aggregation** : Major AI feeds (NVIDIA, OpenAI, Google, Microsoft…)
+- **Instagram scraping** : Tech accounts via Apify
+- **AI enrichment** : GPT-3 summaries + Gemini Pro image analysis
+- **Deduplication** : Avoids duplicates automatically
+- **Structured export** : Title, URL, date, source, AI summary
 
 <p align="center">
-  <img src="assets/data-sheet.png" alt="Google Sheets Output" width="800">
+  <img src="assets/data-sheet.png" alt="Google Sheets output" width="800">
 </p>
 
 ---
 
-## Guide de démarrage rapide
+## Quick start
 
-### Prérequis
+### Prerequisites
 
 | Service | Description |
 |---------|-------------|
-| Make | Compte gratuit ou payant |
-| Google Sheets | Compte Google |
-| OpenAI API | Avec crédits disponibles |
+| Make | Free or paid account |
+| Google Sheets | Google account |
+| OpenAI API | Credits available |
 | Gemini API | Google AI Studio |
-| Apify | Pour scraping Instagram |
+| Apify | For Instagram scraping |
 
-### Étape 1 : Cloner le repository
+### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/Productivityio/workflow-make-multi-scraper.git
-cd workflow-make-multi-scraper
+git clone https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code/multi-scraper
 ```
 
-### Étape 2 : Créer le Google Sheet
+### Step 2: Create the Google Sheet
 
-1. Créer un nouveau Google Sheets
-2. Ajouter les colonnes : `Titre | URL | Date | Source | Résumé IA`
-3. Copier l'ID du spreadsheet (dans l'URL)
+1. Create a new Google Sheet
+2. Add columns: `Title | URL | Date | Source | AI Summary`
+3. Copy the spreadsheet ID (from the URL)
 
-### Étape 3 : Importer le workflow
+### Step 3: Import the workflow
 
-1. Ouvrir [Make.com](https://make.com)
+1. Open [Make.com](https://make.com)
 2. Scenarios → **Create a new scenario**
-3. Menu (**⋮**) → **Import Blueprint**
-4. Sélectionner `json/workflow.json`
+3. Menu (⋮) → **Import Blueprint**
+4. Select `json/workflow.json`
 
-### Étape 4 : Configurer les credentials
+### Step 4: Configure credentials
 
 | Service | Configuration |
-|---------|---------------|
-| Google Sheets | Connecter compte Google + ID spreadsheet |
-| OpenAI | API key depuis platform.openai.com |
-| Gemini | API key depuis Google AI Studio |
-| Apify | Token depuis apify.com/account |
+|---------|----------------|
+| Google Sheets | Connect Google account + spreadsheet ID |
+| OpenAI | API key from platform.openai.com |
+| Gemini | API key from Google AI Studio |
+| Apify | Token from apify.com/account |
 
-### Étape 5 : Configurer les sources
+### Step 5: Configure sources
 
-1. **RSS** : Modifier les URLs des flux dans le module RSS
-2. **Instagram** : Modifier la liste des comptes à scraper
+1. **RSS** : Edit feed URLs in the RSS module
+2. **Instagram** : Edit the list of accounts to scrape
 
-### Étape 6 : Tester et planifier
+### Step 6: Test and schedule
 
 ```
-1. Cliquer "Run once" pour tester
-2. Vérifier le Google Sheets
-3. Activer la planification (ex: toutes les 6h)
+1. Click "Run once" to test
+2. Check the Google Sheet
+3. Enable scheduling (e.g. every 6h)
 ```
 
 ---
 
-## Démo
+## Demo
 
-[Google Sheet de démonstration](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit)
-
----
-
-## Dépannage
-
-| Problème | Solution |
-|----------|----------|
-| API limits | Vérifier quotas OpenAI/Gemini |
-| Rate limiting | Réduire fréquence d'exécution |
-| Permissions | Vérifier accès Google Sheets |
-| Instagram bloqué | Vérifier token Apify et quotas |
+[Demo Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit)
 
 ---
 
-## Structure du projet
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| API limits | Check OpenAI/Gemini quotas |
+| Rate limiting | Reduce run frequency |
+| Permissions | Check Google Sheets access |
+| Instagram blocked | Check Apify token and quotas |
+
+---
+
+## Project structure
 
 ```
-workflow-make-multi-scraper/
-├── README.md           # Ce fichier
+multi-scraper/
+├── README.md
 ├── json/
-│   └── workflow.json   # Blueprint Make à importer
+│   └── workflow.json   # Make blueprint to import
 └── assets/
     ├── make-logo.png
     ├── make-workflow.png
     └── data-sheet.png
 ```
-
----
-
-<p align="center">
-  Made by <a href="https://github.com/Productivityio">Productivityio</a>
-</p>

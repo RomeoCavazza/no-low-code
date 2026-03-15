@@ -5,7 +5,7 @@
 <h1 align="center">🎵 TikTok Intelligence</h1>
 
 <p align="center">
-  <strong>Veille TikTok automatisée : extraction, transcripts et analyse IA</strong>
+  <strong>Automated TikTok monitoring: extraction, transcripts and AI analysis</strong>
 </p>
 
 <p align="center">
@@ -18,9 +18,9 @@
 
 ---
 
-## Aperçu
+## Overview
 
-Workflow n8n pour veille TikTok : extraction de vidéos par mots-clés ou comptes, récupération des transcripts VTT, et stockage enrichi dans Airtable.
+n8n workflow for TikTok monitoring: extract videos by keywords or accounts, fetch VTT transcripts, and store enriched data in Airtable.
 
 ### Technical Core
 
@@ -28,11 +28,11 @@ Workflow n8n pour veille TikTok : extraction de vidéos par mots-clés ou compte
 |-------|----------------|
 | **Orchestration** | n8n |
 | **Source** | Apify (TikTok Scraper) |
-| **IA** | OpenAI (résumés, insights) |
-| **Stockage** | Airtable |
-| **Entrée** | Webhook / formulaire web |
+| **AI** | OpenAI (summaries, insights) |
+| **Storage** | Airtable |
+| **Input** | Webhook / web form |
 
-**Architecture** : `Formulaire Web → n8n → Apify TikTok → VTT → OpenAI → Airtable`
+**Architecture** : `Web form → n8n → Apify TikTok → VTT → OpenAI → Airtable`
 
 <p align="center">
   <img src="assets/n8n-workflow.png" alt="n8n Workflow" width="800">
@@ -40,45 +40,45 @@ Workflow n8n pour veille TikTok : extraction de vidéos par mots-clés ou compte
 
 ---
 
-## Fonctionnalités
+## Features
 
-- **Recherche flexible** : Par mots-clés ou comptes spécifiques
-- **Métriques TikTok** : Vues, likes, commentaires, partages
-- **Transcripts VTT** : Extraction automatique des sous-titres
-- **Analyse IA** : Résumé et insights via OpenAI
-- **Stockage Airtable** : Base de données structurée
+- **Flexible search** : By keywords or specific accounts
+- **TikTok metrics** : Views, likes, comments, shares
+- **VTT transcripts** : Automatic subtitle extraction
+- **AI analysis** : Summaries and insights via OpenAI
+- **Airtable storage** : Structured database
 
 <p align="center">
-  <img src="assets/request-form.png" alt="Formulaire de requête" width="600">
+  <img src="assets/request-form.png" alt="Request form" width="600">
 </p>
 
 ---
 
-## Guide de démarrage rapide
+## Quick start
 
-### Prérequis
+### Prerequisites
 
 | Service | Description |
 |---------|-------------|
-| n8n | Cloud ou self-hosted |
-| Apify | Compte avec TikTok Scraper |
-| Airtable | Base de données |
-| OpenAI API | Avec crédits disponibles |
+| n8n | Cloud or self-hosted |
+| Apify | Account with TikTok Scraper |
+| Airtable | Base |
+| OpenAI API | Credits available |
 
-### Étape 1 : Cloner le repository
+### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/Productivityio/workflow-n8n-tiktok.git
-cd workflow-n8n-tiktok
+git clone https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code/tiktok
 ```
 
-### Étape 2 : Préparer Airtable
+### Step 2: Set up Airtable
 
-1. Créer une nouvelle **Base** sur [airtable.com](https://airtable.com)
-2. Créer une table **"Scraped Content"** avec les colonnes :
+1. Create a new **Base** at [airtable.com](https://airtable.com)
+2. Create a table **"Scraped Content"** with columns:
 
-| Colonne | Type |
-|---------|------|
+| Column | Type |
+|--------|------|
 | Video URL | URL |
 | Author | Single line text |
 | Description | Long text |
@@ -90,74 +90,68 @@ cd workflow-n8n-tiktok
 | AI Summary | Long text |
 | Created At | Date |
 
-3. Copier le **Base ID** (dans l'URL : `airtable.com/appXXXXXXX/...`)
+3. Copy the **Base ID** (from the URL: `airtable.com/appXXXXXXX/...`)
 
-### Étape 3 : Importer le workflow
+### Step 3: Import the workflow
 
-1. Ouvrir votre instance **n8n**
+1. Open your **n8n** instance
 2. Workflows → **Import from File**
-3. Sélectionner `json/workflow.json`
+3. Select `json/workflow.json`
 
-### Étape 4 : Configurer les credentials
+### Step 4: Configure credentials
 
 | Service | Configuration |
 |---------|---------------|
-| Apify | Token depuis apify.com/account |
+| Apify | Token from apify.com/account |
 | Airtable | API key + Base ID + Table name |
-| OpenAI | API key depuis platform.openai.com |
+| OpenAI | API key from platform.openai.com |
 
-### Étape 5 : Activer et utiliser
+### Step 5: Activate and use
 
-1. Activer le workflow (toggle **Active** → ON)
-2. Copier l'URL du webhook (premier nœud)
-3. Accéder au formulaire via cette URL
+1. Activate the workflow (toggle **Active** → ON)
+2. Copy the webhook URL (first node)
+3. Open the form via that URL
 
-### Étape 6 : Lancer une recherche
+### Step 6: Run a search
 
 <p align="center">
-  <img src="assets/data-table.png" alt="Résultats Airtable" width="800">
+  <img src="assets/data-table.png" alt="Airtable results" width="800">
 </p>
 
 ---
 
-## Paramètres du formulaire
+## Form parameters
 
-| Champ | Description | Exemple |
+| Field | Description | Example |
 |-------|-------------|---------|
-| Keywords | Mots-clés de recherche | `AI tools, productivity` |
-| Accounts | Comptes spécifiques | `@openai, @nvidia` |
-| Period | Période de recherche | `7` (jours) |
-| Results | Nombre de résultats | `20` |
+| Keywords | Search keywords | `AI tools, productivity` |
+| Accounts | Specific accounts | `@openai, @nvidia` |
+| Period | Search period | `7` (days) |
+| Results | Number of results | `20` |
 
 ---
 
-## Dépannage
+## Troubleshooting
 
-| Problème | Solution |
-|----------|----------|
-| 401/403 | Vérifier credentials Apify/Airtable |
-| VTT manquant | Certaines vidéos n'ont pas de sous-titres |
-| Rate limiting | Réduire `resultsPerPage` |
-| Timeout | Augmenter le timeout dans n8n |
+| Issue | Solution |
+|-------|----------|
+| 401/403 | Check Apify/Airtable credentials |
+| Missing VTT | Some videos have no subtitles |
+| Rate limiting | Lower `resultsPerPage` |
+| Timeout | Increase timeout in n8n |
 
 ---
 
-## Structure du projet
+## Project structure
 
 ```
-workflow-n8n-tiktok/
-├── README.md           # Ce fichier
+tiktok/
+├── README.md
 ├── json/
-│   └── workflow.json   # Workflow n8n à importer
+│   └── workflow.json   # n8n workflow to import
 └── assets/
     ├── n8n-logo.png
     ├── n8n-workflow.png
     ├── request-form.png
     └── data-table.png
 ```
-
----
-
-<p align="center">
-  Made by <a href="https://github.com/Productivityio">Productivityio</a>
-</p>

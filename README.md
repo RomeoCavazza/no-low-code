@@ -10,73 +10,24 @@
 </div>
 <!-- markdownlint-enable MD033 -->
 
-Collection de trois workflows d’automatisation (n8n, Make) avec intégration IA (OpenAI, Gemini), déployables en autonome ou via Docker. Chaque sous-dossier contient le workflow exporté, les assets et, le cas échéant, un frontend ou une démo.
+This repository bundles **three automation workflows** (n8n, Make) with AI integration (OpenAI, Gemini), deployable standalone or via Docker. Each subfolder contains the exported workflow, assets and, when applicable, a frontend or demo.
+
+**Research context** : This repository is used for research on **how to collect and use data from social networks and communication channels** (email, TikTok, Instagram, RSS) **through no-code / low-code automation tools**. The goal is to assess orchestration (n8n, Make), scraping (Apify), AI enrichment (LLM, vision) and storage (Airtable, Google Sheets) to build reproducible pipelines without heavy custom development.
 
 ---
 
-## Technical Core
+## Technical Core · Repository structure
 
 | Layer | Stack |
 |-------|--------|
 | **Orchestration** | n8n, Make |
-| **IA**            | OpenAI GPT-3.5, Google Gemini |
-| **Scraping**      | Apify |
-| **Stockage**      | Airtable, Google Sheets |
-| **APIs**          | Gmail, TikTok (via Apify) |
-| **Runtime**       | Docker (Gmail), Make/n8n cloud (autres) |
+| **AI** | OpenAI GPT-3.5, Google Gemini |
+| **Scraping** | Apify (TikTok, Instagram) |
+| **Storage** | Airtable, Google Sheets, JSON (file) |
+| **APIs** | Gmail API, TikTok (via Apify) |
+| **Runtime** | Docker (Gmail), Make/n8n cloud (others) |
 
----
-
-## Workflows
-
-### [Gmail AI Dashboard](gmail/)
-
-Pipeline Gmail : extraction des emails, résumés et détection d’urgence (OpenAI), dashboard web (tri, épinglage, archivage). Déploiement via Docker.
-
-| Rôle | Détail |
-|------|--------|
-| Extraction | Récupération automatique des emails (Gmail API) |
-| Analyse | Résumés + détection d’urgence (OpenAI) |
-| UI | Interface web (JavaScript) |
-| Déploiement | `docker-compose` |
-
-![Gmail Workflow](gmail/assets/n8n-workflow.png)
-
----
-
-### [Multi-Scraper IA](multi-scraper/)
-
-Veille automatisée : agrégation de flux RSS et comptes Instagram, enrichissement (résumés GPT, analyse d’images Gemini), déduplication, export vers Google Sheets.
-
-| Rôle | Détail |
-|------|--------|
-| Agrégation | RSS + Instagram (Apify) |
-| Enrichissement | GPT + Gemini (images) |
-| Déduplication | Traitement avant export |
-| Export | Google Sheets |
-
-Démo : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit).
-
-![Make Workflow](multi-scraper/assets/make-workflow.png)
-
----
-
-### [TikTok Intelligence](tiktok/)
-
-Extraction TikTok (mots-clés ou comptes) : métriques (vues, likes, commentaires, partages), extraction des sous-titres VTT, résumés et insights (OpenAI), export Airtable.
-
-| Rôle | Détail |
-|------|--------|
-| Source | TikTok via Apify |
-| Métriques | Vues, likes, commentaires, partages |
-| Transcripts | Sous-titres VTT |
-| Analyse | Résumés OpenAI → Airtable |
-
-![TikTok Workflow](tiktok/assets/n8n-workflow.png)
-
----
-
-## Structure du dépôt
+**Repository structure**
 
 ```
 no-low-code/
@@ -95,12 +46,80 @@ no-low-code/
 
 ---
 
-## Variantes standalone (Productivityio)
+## Global architecture of the three projects
 
-Chaque workflow est aussi publié dans un dépôt dédié sous l’organisation Productivityio :
+The three workflows share a common pattern: **data source → orchestration → AI enrichment → storage / delivery**.
 
-| Workflow        | Dépôt |
-|-----------------|-------|
-| Gmail           | [workflow-n8n-gmail](https://github.com/Productivityio/workflow-n8n-gmail) |
-| Multi-Scraper   | [workflow-make-multi-scraper](https://github.com/Productivityio/workflow-make-multi-scraper) |
-| TikTok          | [workflow-n8n-tiktok](https://github.com/Productivityio/workflow-n8n-tiktok) |
+```mermaid
+flowchart LR
+    subgraph Gmail["📧 Gmail AI Dashboard"]
+        G1[Schedule / Webhook] --> G2[Gmail API]
+        G2 --> G3[OpenAI]
+        G3 --> G4[JSON]
+        G4 --> G5[Dashboard Web]
+    end
+    subgraph Multi["🔍 Multi-Scraper IA"]
+        M1[RSS + Instagram] --> M2[Make]
+        M2 --> M3[OpenAI + Gemini]
+        M3 --> M4[Deduplication]
+        M4 --> M5[Google Sheets]
+    end
+    subgraph TikTok["🎵 TikTok Intelligence"]
+        T1[Webhook / Form] --> T2[Apify TikTok]
+        T2 --> T3[VTT + OpenAI]
+        T3 --> T4[Airtable]
+    end
+```
+
+---
+
+## Workflows
+
+### [Gmail AI Dashboard](gmail/)
+
+End-to-end pipeline: fetch Gmail via the official API, analyse with OpenAI (summaries, urgency detection), then serve results in a **web interface** (sort, pin, archive, filters). One-command deploy with **Docker**. Ideal for centralising email monitoring and prioritising messages without opening Gmail.
+
+| Role | Details |
+|------|--------|
+| Extraction | Automatic fetch of latest emails (Gmail API, 24h window) |
+| Analysis | Summaries + urgency detection (OpenAI GPT-3.5) |
+| UI | Vanilla JS dashboard (HTML5, CSS3, localStorage, Lucide) |
+| Deploy | `docker-compose` (n8n + static server) |
+
+![Gmail Workflow](gmail/assets/n8n-workflow.png)
+
+---
+
+### [Multi-Scraper IA](multi-scraper/)
+
+Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Google, Microsoft…) and **Instagram** tech accounts via Apify, enrich with GPT summaries and Gemini image analysis, **deduplicate**, then export to **Google Sheets**. Run an AI monitoring dashboard with no code.
+
+| Role | Details |
+|------|--------|
+| Aggregation | RSS + Instagram (Apify) |
+| Enrichment | GPT-3.5 summaries + Gemini Pro image analysis |
+| Deduplication | Pre-export processing to avoid duplicates |
+| Export | Google Sheets (Title, URL, date, source, AI summary) |
+
+**Demo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit).
+
+![Make Workflow](multi-scraper/assets/make-workflow.png)
+
+---
+
+### [TikTok Intelligence](tiktok/)
+
+TikTok extraction by **keywords** or **accounts**: metrics (views, likes, comments, shares), **VTT subtitle** extraction, summaries and insights via OpenAI, then save to **Airtable**. Useful for creator monitoring, trends or video content analysis.
+
+| Role | Details |
+|------|--------|
+| Source | TikTok via Apify (keywords or handles) |
+| Metrics | Views, likes, comments, shares |
+| Transcripts | Automatic VTT subtitles |
+| Analysis | Summaries and insights OpenAI → Airtable |
+
+![TikTok Workflow](tiktok/assets/n8n-workflow.png)
+
+---
+
+Each workflow is **self-contained**: clone the subfolder, import the JSON into n8n or Make, set credentials (API keys, OAuth, Apify tokens), and run. No custom backend is required beyond the orchestrator and cloud services (Airtable, Sheets, Gmail).
