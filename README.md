@@ -62,6 +62,8 @@ flowchart LR
 
 ### [Gmail AI Dashboard](gmail/)
 
+End-to-end pipeline: fetch Gmail via the official API, analyse with OpenAI (summaries, urgency detection), then serve results in a **web interface** (sort, pin, archive, filters). One-command deploy with **Docker**. Ideal for centralising email monitoring and prioritising messages without opening Gmail.
+
 ```
 gmail/
 ├── docker-compose.yml
@@ -70,7 +72,12 @@ gmail/
 └── frontend/
 ```
 
-End-to-end pipeline: fetch Gmail via the official API, analyse with OpenAI (summaries, urgency detection), then serve results in a **web interface** (sort, pin, archive, filters). One-command deploy with **Docker**. Ideal for centralising email monitoring and prioritising messages without opening Gmail.
+**Install (this workflow only)**
+
+```bash
+git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code && git sparse-checkout set gmail && cd gmail
+```
 
 | Role | Details |
 |------|--------|
@@ -87,16 +94,11 @@ End-to-end pipeline: fetch Gmail via the official API, analyse with OpenAI (summ
 
 *Web dashboard: AI summary, urgency badge, filters and email actions.*
 
-**Install (this workflow only)**
-
-```bash
-git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
-cd no-low-code && git sparse-checkout set gmail && cd gmail
-```
-
 ---
 
 ### [Multi-Scraper IA](multi-scraper/)
+
+Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Google, Microsoft…) and **Instagram** tech accounts via Apify, enrich with GPT summaries and Gemini image analysis, **deduplicate**, then export to **Google Sheets**. Run an AI monitoring dashboard with no code. **Demo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit).
 
 ```
 multi-scraper/
@@ -104,7 +106,12 @@ multi-scraper/
 └── assets/
 ```
 
-Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Google, Microsoft…) and **Instagram** tech accounts via Apify, enrich with GPT summaries and Gemini image analysis, **deduplicate**, then export to **Google Sheets**. Run an AI monitoring dashboard with no code. **Demo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit).
+**Install (this workflow only)**
+
+```bash
+git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code && git sparse-checkout set multi-scraper && cd multi-scraper
+```
 
 | Role | Details |
 |------|--------|
@@ -121,16 +128,11 @@ Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Goog
 
 *Google Sheets output: title, URL, date, source, AI summary.*
 
-**Install (this workflow only)**
-
-```bash
-git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
-cd no-low-code && git sparse-checkout set multi-scraper && cd multi-scraper
-```
-
 ---
 
 ### [TikTok Intelligence](tiktok/)
+
+TikTok extraction by **keywords** or **accounts**: metrics (views, likes, comments, shares), **VTT subtitle** extraction, summaries and insights via OpenAI, then save to **Airtable**. Useful for creator monitoring, trends or video content analysis.
 
 ```
 tiktok/
@@ -138,7 +140,12 @@ tiktok/
 └── assets/
 ```
 
-TikTok extraction by **keywords** or **accounts**: metrics (views, likes, comments, shares), **VTT subtitle** extraction, summaries and insights via OpenAI, then save to **Airtable**. Useful for creator monitoring, trends or video content analysis.
+**Install (this workflow only)**
+
+```bash
+git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
+cd no-low-code && git sparse-checkout set tiktok && cd tiktok
+```
 
 | Role | Details |
 |------|--------|
@@ -154,13 +161,6 @@ TikTok extraction by **keywords** or **accounts**: metrics (views, likes, commen
 ![TikTok Data](tiktok/assets/data-table.png)
 
 *Airtable table: video URL, author, metrics, transcript, AI summary.*
-
-**Install (this workflow only)**
-
-```bash
-git clone --filter=blob:none --sparse https://github.com/RomeoCavazza/no-low-code.git
-cd no-low-code && git sparse-checkout set tiktok && cd tiktok
-```
 
 ---
 
