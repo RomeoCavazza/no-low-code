@@ -71,7 +71,16 @@ End-to-end pipeline: fetch Gmail via the official API, analyse with OpenAI (summ
 | UI | Vanilla JS dashboard (HTML5, CSS3, localStorage, Lucide) |
 | Deploy | `docker-compose` (n8n + static server) |
 
+```
+gmail/
+├── docker-compose.yml
+├── json/workflow.json
+├── assets/
+└── frontend/
+```
+
 ![Gmail Workflow](gmail/assets/n8n-workflow.png)
+![Gmail Frontend](gmail/assets/front-page.png)
 
 ---
 
@@ -88,7 +97,14 @@ Multi-source automated monitoring: aggregate **RSS feeds** (NVIDIA, OpenAI, Goog
 
 **Demo** : [Google Sheet](https://docs.google.com/spreadsheets/d/17JXOTxNk7-EDYpSQIKgBH-hyClpwn7jkmSknl3Azs1A/edit).
 
+```
+multi-scraper/
+├── json/workflow.json
+└── assets/
+```
+
 ![Make Workflow](multi-scraper/assets/make-workflow.png)
+![Multi-Scraper Data](multi-scraper/assets/data-sheet.png)
 
 ---
 
@@ -103,7 +119,14 @@ TikTok extraction by **keywords** or **accounts**: metrics (views, likes, commen
 | Transcripts | Automatic VTT subtitles |
 | Analysis | Summaries and insights OpenAI → Airtable |
 
+```
+tiktok/
+├── json/workflow.json
+└── assets/
+```
+
 ![TikTok Workflow](tiktok/assets/n8n-workflow.png)
+![TikTok Data](tiktok/assets/data-table.png)
 
 ---
 
